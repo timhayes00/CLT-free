@@ -1,0 +1,128 @@
+// To install -->
+// npm install -g sass
+// sass --version
+// sass public/stylesheets/sass/main.scss public/stylesheets/css/style.css
+
+//----------------
+// COLORS 
+//----------------
+$gray: #8b9598;
+$carolina-blue: #79aad4;
+$teal: #4f8292;
+// rgba(35, 119, 158, 0.8)
+
+//----------------
+// FONTS
+//----------------
+$Stylish: 'Stylish', sans-serif;
+$IM-Fell: 'IM Fell English', serif;
+$large-font: 10em;
+$medium-font: 8em;
+$small-font: 5em;
+$xsmall-font: 3em;
+$body-font: 1.2em;
+
+//----------------
+// FORMATTING
+//----------------
+
+//----------------
+// *** RULES ***
+//----------------
+.bg {
+    background: linear-gradient(rgba(121, 170, 212, 0.788235294117647), transparent 60%), linear-gradient(0deg, #ffffff, transparent 30%), #ffffff url(../../img/bg.gif) no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    border-radius: 0;
+    h1 {
+        display: inline;
+        font-family: $Stylish;
+        font-size: $medium-font;
+        letter-spacing: 3px;
+    }
+    .display-4 {
+        color: #79aad4;
+        text-shadow: 1px 1px 0px white;
+    }
+    .description {
+        background: linear-gradient(to right, white ,#fbfbfba6);
+        padding: 10px;
+        display: inline;
+        border-radius: 5px;
+        box-shadow: -3px 5px 8px 0px #a2a2a2;
+    }
+    .free {
+        font-family: $IM-Fell;
+        font-size: $small-font;
+        text-shadow: 2px 2px 8px white;
+    }
+    .looking {
+        background: $carolina-blue;
+        border: none;
+    }
+}
+
+.content {
+    .scrollbox {
+        height: 730px;
+        overflow-x: scroll;
+        margin: 0 11px;
+    }
+    .heading {
+        background-color: $carolina-blue;
+        color: white;
+        padding: 10px 0;
+        font-family: $Stylish;
+        font-size: $xsmall-font;
+        text-shadow: 2px 2px 8px #5a5656;
+        border-radius: 4px;
+    }
+    .section {
+        background: lightgray;
+        padding: 10px;
+        margin: 0 0 13px 0;
+        border-radius: 5px;
+    }
+}
+
+.form {
+    background: $gray;
+    padding: 20px;
+    border-radius: 5px;
+    label {
+        font-family: $Stylish;
+        font-size: 1.5em;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        font-style: italic;
+    }
+    .submit {
+        float: right;
+    }
+}
+
+
+//-----------------------
+// *** MEDIA QUERIES ***
+//-----------------------
+$tablet: 760px;
+$laptop: 1300px;
+
+@media (min-width: $tablet) {
+
+    .jumbotron {
+        h1 {
+            font-size: $large-font;
+        }
+        .free {
+            font-size: $medium-font;
+        }
+        .looking {
+            display: none;
+        }
+    }
+    
+}
