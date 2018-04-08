@@ -6,7 +6,7 @@
 //----------------
 // COLORS 
 //----------------
-$gray: #8b9598;
+$gray: #bfc7ca;
 $carolina-blue: #79aad4;
 $teal: #4f8292;
 // rgba(35, 119, 158, 0.8)
@@ -21,10 +21,6 @@ $medium-font: 8em;
 $small-font: 5em;
 $xsmall-font: 3em;
 $body-font: 1.2em;
-
-//----------------
-// FORMATTING
-//----------------
 
 //----------------
 // *** RULES ***
@@ -43,7 +39,7 @@ $body-font: 1.2em;
         letter-spacing: 3px;
     }
     .display-4 {
-        color: #79aad4;
+        color: #5a97cc;
         text-shadow: 1px 1px 0px white;
     }
     .description {
@@ -51,7 +47,6 @@ $body-font: 1.2em;
         padding: 10px;
         display: inline;
         border-radius: 5px;
-        box-shadow: -3px 5px 8px 0px #a2a2a2;
     }
     .free {
         font-family: $IM-Fell;
@@ -101,7 +96,16 @@ $body-font: 1.2em;
     }
     .submit {
         float: right;
+        background: #204252;
+        border: none;
+        &:hover { background: #0b233b; }
     }
+}
+
+.back-to {
+    background: $carolina-blue;
+    border: none;
+    &:hover { background: #5a97cc; }
 }
 
 
@@ -123,6 +127,14 @@ $laptop: 1300px;
         .looking {
             display: none;
         }
+    }
+    
+}
+
+@media (min-width: $laptop) {
+
+    .jumbotron {
+        min-height: 100vh;
     }
     
 }

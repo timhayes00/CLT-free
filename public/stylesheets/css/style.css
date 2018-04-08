@@ -13,7 +13,7 @@
   letter-spacing: 3px;
 }
 .jumbotron .display-4 {
-  color: #79aad4;
+  color: #5a97cc;
   text-shadow: 1px 1px 0px white;
 }
 .jumbotron .description {
@@ -21,7 +21,6 @@
   padding: 10px;
   display: inline;
   border-radius: 5px;
-  box-shadow: -3px 5px 8px 0px #a2a2a2;
 }
 .jumbotron .free {
   font-family: "IM Fell English", serif;
@@ -55,7 +54,7 @@
 }
 
 .form {
-  background: #8b9598;
+  background: #bfc7ca;
   padding: 20px;
   border-radius: 5px;
 }
@@ -69,6 +68,19 @@
 }
 .form .submit {
   float: right;
+  background: #204252;
+  border: none;
+}
+.form .submit:hover {
+  background: #0b233b;
+}
+
+.back-to {
+  background: #79aad4;
+  border: none;
+}
+.back-to:hover {
+  background: #5a97cc;
 }
 
 @media (min-width: 760px) {
@@ -80,5 +92,10 @@
   }
   .jumbotron .looking {
     display: none;
+  }
+}
+@media (min-width: 1300px) {
+  .jumbotron {
+    min-height: 100vh;
   }
 }
