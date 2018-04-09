@@ -30,6 +30,7 @@ $body-font: 1.2em;
 }
 
 .jumbotron {
+    min-height: 100vh;
     border-radius: 0;
     h1 {
         display: inline;
@@ -53,16 +54,30 @@ $body-font: 1.2em;
         font-size: $small-font;
         text-shadow: 2px 2px 8px white;
     }
-    .browse,
-    .post {
-        border-radius: 0;
+    .looking {
         border: none;
-        padding: 20px 40px;
         background: rgba(121, 170, 212, 0.78);
         &:hover { background: #5a97cc; }
-        box-shadow: inset 0px 0px 11px 3px #fff;
-        text-shadow: -1px 1px 3px #5a5656;
+        // box-shadow: inset 0px 0px 11px 3px #fff;
     }
+    .post {
+        border-radius: 2px;
+        border: 2px solid white;
+        padding: 10px 20px;
+        color: white;
+        background: rgba(255, 255, 255, 0.4);
+        &:hover { 
+            background: white;
+            color: #5a97cc; 
+        }
+    }
+    .login {
+        color: #5a97cc;
+    }
+}
+
+.dashboard {
+    min-height: 10vh;
 }
 
 .content {
@@ -143,7 +158,7 @@ $laptop: 1300px;
 @media (min-width: $laptop) {
 
     .jumbotron {
-        min-height: 100vh;
+        
         .buttons {
             margin: 10rem;
         }
