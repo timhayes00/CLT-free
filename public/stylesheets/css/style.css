@@ -4,6 +4,7 @@
 }
 
 .jumbotron {
+  min-height: 100vh;
   border-radius: 0;
 }
 .jumbotron h1 {
@@ -28,18 +29,30 @@
   font-size: 4.5em;
   text-shadow: 2px 2px 8px white;
 }
-.jumbotron .browse,
-.jumbotron .post {
-  border-radius: 0;
+.jumbotron .looking {
   border: none;
-  padding: 20px 40px;
   background: rgba(121, 170, 212, 0.78);
-  box-shadow: inset 0px 0px 11px 3px #fff;
-  text-shadow: -1px 1px 3px #5a5656;
 }
-.jumbotron .browse:hover,
-.jumbotron .post:hover {
+.jumbotron .looking:hover {
   background: #5a97cc;
+}
+.jumbotron .post {
+  border-radius: 2px;
+  border: 2px solid white;
+  padding: 10px 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
+}
+.jumbotron .post:hover {
+  background: white;
+  color: #5a97cc;
+}
+.jumbotron .login {
+  color: #5a97cc;
+}
+
+.dashboard {
+  min-height: 10vh;
 }
 
 .content .scrollbox {
@@ -108,9 +121,6 @@
   }
 }
 @media (min-width: 1300px) {
-  .jumbotron {
-    min-height: 100vh;
-  }
   .jumbotron .buttons {
     margin: 10rem;
   }
