@@ -49,7 +49,6 @@ passport.deserializeUser(function(id, cb) {
 });
 
 
-
 // Handlebars if we end up needing it.
 // var exphbs = require("express-handlebars");
 
