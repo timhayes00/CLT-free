@@ -55,7 +55,7 @@ router.post("/api/jobs", function(req, res) {
 //Routes for profile dashboard
 
 //Route for profile freelancer posts
-router.get("/api/jobs", function(req, res) {
+router.get("/api/freelancer", function(req, res) {
     db.placeholer.findAll(function(data) {
       res.json(data);
     });
@@ -68,7 +68,32 @@ router.get("/api/jobs", function(req, res) {
     });
 });
 
-//Route for messages tentative
+//GET Route for tentative messages
+
+//PUT route for updating a post from profile page
+router.put("/api/posts", function(req, res) {
+    db.Post.update(req.body,
+        {
+        where: {
+            id: req.body.id
+        }
+        })
+        .then(function(dbPost) {
+        res.json(dbPost);
+        });
+});
+
+//DELETE route for removing a post from profile page
+router.delete("/api/freelancers/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
 
 
 //HTML routes
