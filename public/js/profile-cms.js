@@ -12,29 +12,32 @@ $(document).ready(function() {
         var email = $("#email").val().trim();
         var rate = $("#rate").val().trim();
         var image = $("#profile-image").val().trim();
+        var bio = $("#bio").val().trim();
         //code for grabbing user id of logged in user
      
       // Wont submit the post if we are missing a body or a title
-      if (!jobName.val().trim() || !jobBudget.val().trim() || !jobEmail.val().trim() || !jobDescription.val().trim() ) {
+      if (!freelancerName.val().trim() || !category.val().trim() || !portfolio.val().trim() || !linkedin.val().trim() || !email.val().trim() || !rate.val().trim() || !image.val().trim()) {
         return;
       }
       // Constructing a newJobPost object to hand to the database
-      var newJobPost = {
-        creator:"Placeholder",
-        job_name: jobName,
-        job_description: jobDescription,
-        job_category: jobCategory,
-        budget: jobBudget,
-        email: jobEmail
+      var newFreelancerPost = {
+        freelancer_name: freelancerName,
+        skill_set: category,
+        img_link: image,
+        bio: bio,
+        portfolio: portfolio,
+        linked_in: linkedin,
+        email: email,
+        rate_requested: rate
       };
   
-      console.log(newJobPost);
+      console.log(newFreelancerPost);
 
       //ajax post to send new job to database
       $.ajax({
         method: "POST",
-        url: "/api/jobs",
-        data: newJobPost
+        url: "/api/freelancers",
+        data: newFreelancerPost
       })
   
     });
