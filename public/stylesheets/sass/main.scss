@@ -1,4 +1,4 @@
-// To install -->
+// To install:
 // npm install -g sass
 // sass --version
 // sass public/stylesheets/sass/main.scss public/stylesheets/css/style.css
@@ -24,6 +24,9 @@ $body-font: 1.2em;
 //----------------
 // *** RULES ***
 //----------------
+
+// <--- landing page --->
+
 .bg {
     background: linear-gradient(rgba(121, 170, 212, 0.788235294117647), transparent 60%), linear-gradient(0deg, #ffffff, transparent 30%), #ffffff url(../../img/bg.gif) no-repeat;
     background-size: cover;
@@ -35,12 +38,17 @@ $body-font: 1.2em;
     h1 {
         display: inline;
         font-family: $Stylish;
-        font-size: $medium-font;
         letter-spacing: 3px;
     }
     .display-4 {
         color: #5a97cc;
         text-shadow: 1px 1px 0px white;
+        font-size: $small-font;
+    }
+    .free {
+        font-family: $IM-Fell;
+        font-size: $small-font;
+        text-shadow: 2px 2px 8px white;
     }
     .description {
         background: linear-gradient(to right, white ,#fbfbfba6);
@@ -48,11 +56,6 @@ $body-font: 1.2em;
         display: inline;
         border-radius: 5px;
         font-size: 1.2rem;
-    }
-    .free {
-        font-family: $IM-Fell;
-        font-size: $small-font;
-        text-shadow: 2px 2px 8px white;
     }
     .looking {
         border: none;
@@ -72,29 +75,53 @@ $body-font: 1.2em;
         }
     }
     .login {
-        color: #5a97cc;
+        color: #2d5280;
+        &:hover { 
+            border-bottom: 2px solid #2d5280; 
+        }
+    }
+    .buttons {
+        margin-top: 4rem;
     }
 }
+
+// <--- dashboard pages --->
 
 .dashboard {
     min-height: 10vh;
+    .display-4 {
+        font-size: $small-font;
+        display: inline;
+        margin-right: 2px;
+    }
+    .free {
+        font-size: $small-font;
+    }
+    nav {
+        display: block;
+        .post {
+            background: white;
+            color: #5a97cc; 
+            &:hover { 
+                background: $carolina-blue;
+                border-color: $carolina-blue;
+                color: white;
+            }
+        }
+    }
+}
+
+.heading {
+    background-color: $carolina-blue;
+    color: white;
+    padding: 10px 0;
+    font-family: $Stylish;
+    font-size: $xsmall-font;
+    text-shadow: 2px 2px 8px #5a5656;
+    border-radius: 0;
 }
 
 .content {
-    .scrollbox {
-        height: 730px;
-        overflow-x: scroll;
-        margin: 0 11px;
-    }
-    .heading {
-        background-color: $carolina-blue;
-        color: white;
-        padding: 10px 0;
-        font-family: $Stylish;
-        font-size: $xsmall-font;
-        text-shadow: 2px 2px 8px #5a5656;
-        border-radius: 4px;
-    }
     .section {
         background: lightgray;
         padding: 10px;
@@ -102,6 +129,8 @@ $body-font: 1.2em;
         border-radius: 5px;
     }
 }
+
+// <--- cms forms --->
 
 .form {
     box-shadow: 0px 0px 20px 7px #fff;
@@ -142,8 +171,8 @@ $laptop: 1300px;
 @media (min-width: $tablet) {
 
     .jumbotron {
-        h1 {
-            font-size: $large-font;
+        .display-4 {
+            font-size: 6em;
         }
         .free {
             font-size: $medium-font;
@@ -151,9 +180,29 @@ $laptop: 1300px;
         .description {
             padding: 10px;
         }
+        .buttons {
+            margin-top: 8rem;
+        }
+    }
+
+    .form {
+        .free {
+            font-size: 7em;
+        }
+    }
+
+    .dashboard {
+        .display-4 {
+            font-size: $small-font;
+            margin-right: 4px;
+        }
+        .free {
+            font-size: 6em;
+        }
     }
     
 }
+
 
 @media (min-width: $laptop) {
 
