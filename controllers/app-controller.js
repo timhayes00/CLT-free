@@ -8,35 +8,53 @@ var router = express.Router();
 
 //API routes
 
-router.get("/", function(req, res) {
-    db.#####.all(function(data) {
+//route to get data for freelancers page
+router.get("/api/freelancers", function(req, res) {
+    db.placeholder.all(function(data) {
      
       res.json(data);
     });
 });
 
-router.get("/", function(req, res) {
-    db.#####.all(function(data) {
+//route to get data for jobs page
+router.get("/api/jobs", function(req, res) {
+    db.placeholer.all(function(data) {
      
       res.json(data);
     });
 });
+
 
 //HTML routes
 
-app.get("/", function(req, res) {
+//route to display homepage
+router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-app.get("/freelancers", function(req, res) {
+//route to display freelancers page
+router.get("/freelancers", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/freelancers.html"));
 });
 
-app.get("/", function(req, res) {
+//route to display jobs page
+router.get("/jobs", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/work.html"));
 });
 
-app.get("/", function(req, res) {
+//route to display freelance profile submission page
+router.get("/freelancer-submit", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/profile-cms.html"));
 });
 
+//route to display job submission page
+router.get("/job-submit", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/work-cms.html"));
+});
+
+//route to display user dashboard
+router.get("/profiles/:id", function(req, res) {
+    res.render("placeholder.handlebars", handlebarsobj);
+});
+
+module.exports = router
