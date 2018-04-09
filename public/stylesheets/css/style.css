@@ -18,18 +18,28 @@
 }
 .jumbotron .description {
   background: linear-gradient(to right, white, #fbfbfba6);
-  padding: 10px;
+  padding: 3px;
   display: inline;
   border-radius: 5px;
+  font-size: 1.2rem;
 }
 .jumbotron .free {
   font-family: "IM Fell English", serif;
-  font-size: 5em;
+  font-size: 4.5em;
   text-shadow: 2px 2px 8px white;
 }
-.jumbotron .looking {
-  background: #79aad4;
+.jumbotron .browse,
+.jumbotron .post {
+  border-radius: 0;
   border: none;
+  padding: 20px 40px;
+  background: rgba(121, 170, 212, 0.78);
+  box-shadow: inset 0px 0px 11px 3px #fff;
+  text-shadow: -1px 1px 3px #5a5656;
+}
+.jumbotron .browse:hover,
+.jumbotron .post:hover {
+  background: #5a97cc;
 }
 
 .content .scrollbox {
@@ -54,6 +64,7 @@
 }
 
 .form {
+  box-shadow: 0px 0px 20px 7px #fff;
   background: #bfc7ca;
   padding: 20px;
   border-radius: 5px;
@@ -68,7 +79,7 @@
 }
 .form .submit {
   float: right;
-  background: #204252;
+  background: #79aad4;
   border: none;
 }
 .form .submit:hover {
@@ -78,6 +89,8 @@
 .back-to {
   background: #79aad4;
   border: none;
+  display: block;
+  border-radius: 0;
 }
 .back-to:hover {
   background: #5a97cc;
@@ -90,12 +103,15 @@
   .jumbotron .free {
     font-size: 8em;
   }
-  .jumbotron .looking {
-    display: none;
+  .jumbotron .description {
+    padding: 10px;
   }
 }
 @media (min-width: 1300px) {
   .jumbotron {
     min-height: 100vh;
+  }
+  .jumbotron .buttons {
+    margin: 10rem;
   }
 }
