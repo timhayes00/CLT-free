@@ -10,39 +10,65 @@ var router = express.Router();
 
 //route to get data for freelancers page all-results
 router.get("/api/freelancers", function(req, res) {
-    db.placeholder.all(function(data) {
+    db.placeholder.findAll(function(data) {
       res.json(data);
     });
 });
 
 //add in get routes for each category for sort
+//add in post routs for tentative messaging system
 
 //route to get data for jobs page
 router.get("/api/jobs", function(req, res) {
-    db.placeholer.all(function(data) {
+    db.placeholer.findAll(function(data) {
       res.json(data);
     });
 });
 
 //add in get routes for jobs by category for sort
+//add in post routs for tentative messaging system
 
-//POST route for freelance page
+//POST route for freelance submission page
 router.post("/api/freelancers", function(req, res) {
-    db.placeholer.all(function(data) {
-     
-      res.json(data);
+    db.placeholer.create({
+        title: req.body.title,
+        body: req.body.body,
+        category: req.body.category
+    })
+    .then(function(result) {
+        res.json(result);
     });
 });
 
-//POST route for jobs page
+//POST route for jobs submission page
 router.post("/api/jobs", function(req, res) {
-    db.placeholer.create(function(data) {
-     
+    db.placeholer.create({
+        title: req.body.title,
+        body: req.body.body,
+        category: req.body.category
+    })
+    .then(function(result) {
+        res.json(result);
+    });
+});
+
+//Routes for profile dashboard
+
+//Route for profile freelancer posts
+router.get("/api/jobs", function(req, res) {
+    db.placeholer.findAll(function(data) {
       res.json(data);
     });
 });
 
+//Route for profile job posts
+router.get("/api/jobs", function(req, res) {
+    db.placeholer.findAll(function(data) {
+      res.json(data);
+    });
+});
 
+//Route for messages tentative
 
 
 //HTML routes
