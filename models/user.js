@@ -13,15 +13,23 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     User.associate = function(models) {
-      // We're saying that a Message should belong to an Freelancer AND a Job
-      // A Message can't be created without a Job and a Freelancer due to the foreign keys constraint
-      Message.belongsTo(models.Freelancer, {
+      //The User should be IDed inside the freelancer database
+      User.hasMany(models.Freelancer, {
         foreignKey: {
           allowNull: false
         }
-      });
+      }),
+      User.hasMany(models.Job, {
+          foreignKey: {
+              allowNull: false
+          }
+      })
     };
   
     return User;
   };
   
+
+
+  //in users model, associate "has many" to jobs
+  //freelancers assciate "belongs to" user
