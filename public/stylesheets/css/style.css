@@ -10,31 +10,42 @@
 .jumbotron h1 {
   display: inline;
   font-family: "Stylish", sans-serif;
-  font-size: 8em;
   letter-spacing: 3px;
+}
+.jumbotron .logo {
+  color: black;
+}
+.jumbotron .logo:hover {
+  color: #000;
+  text-decoration-line: none;
 }
 .jumbotron .display-4 {
   color: #5a97cc;
   text-shadow: 1px 1px 0px white;
-}
-.jumbotron .description {
-  background: linear-gradient(to right, white, #fbfbfba6);
-  padding: 3px;
-  display: inline;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 4.5em;
 }
 .jumbotron .free {
   font-family: "IM Fell English", serif;
   font-size: 4.5em;
   text-shadow: 2px 2px 8px white;
 }
+.jumbotron .description {
+  background: linear-gradient(to right, white, #fbfbfba6);
+  padding: 3px;
+  display: inline;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
 .jumbotron .looking {
   border: none;
+  padding: 20px;
   background: rgba(121, 170, 212, 0.78);
 }
 .jumbotron .looking:hover {
   background: #5a97cc;
+}
+.jumbotron .navbar-brand {
+  font-size: 1rem;
 }
 .jumbotron .post {
   border-radius: 2px;
@@ -48,27 +59,70 @@
   color: #5a97cc;
 }
 .jumbotron .login {
-  color: #5a97cc;
+  color: #406280;
+  border-bottom: 2px solid #406280;
+}
+.jumbotron .login:hover {
+  color: #213648;
+  border-color: #213648;
+}
+.jumbotron .buttons {
+  margin-top: 2rem;
+}
+
+.modal .post-modal {
+  padding: 20px 0;
+  background-color: #79aad4;
+  color: white;
+}
+.modal .post-modal:hover {
+  color: white;
+  background-color: #406280;
+}
+.modal .submit {
+  float: right;
+  background: #79aad4;
+  border: none;
+}
+.modal .submit:hover {
+  background: #406280;
 }
 
 .dashboard {
   min-height: 10vh;
+  background: linear-gradient(0deg, #909090, #fdfdfd);
+}
+.dashboard .display-4 {
+  font-size: 2.5em;
+  display: inline;
+  margin-right: 2px;
+}
+.dashboard .free {
+  font-size: 3em;
+}
+.dashboard nav {
+  display: block;
+}
+.dashboard nav .post {
+  background: white;
+  color: #5a97cc;
+}
+.dashboard nav .post:hover {
+  background: #79aad4;
+  border-color: #79aad4;
+  color: white;
 }
 
-.content .scrollbox {
-  height: 730px;
-  overflow-x: scroll;
-  margin: 0 11px;
-}
-.content .heading {
+.heading {
   background-color: #79aad4;
   color: white;
   padding: 10px 0;
   font-family: "Stylish", sans-serif;
   font-size: 3em;
   text-shadow: 2px 2px 8px #5a5656;
-  border-radius: 4px;
+  border-radius: 0;
 }
+
 .content .section {
   background: lightgray;
   padding: 10px;
@@ -96,7 +150,7 @@
   border: none;
 }
 .form .submit:hover {
-  background: #0b233b;
+  background: #406280;
 }
 
 .back-to {
@@ -110,14 +164,35 @@
 }
 
 @media (min-width: 760px) {
-  .jumbotron h1 {
-    font-size: 10em;
+  .jumbotron .display-4 {
+    font-size: 6em;
   }
   .jumbotron .free {
     font-size: 8em;
   }
   .jumbotron .description {
-    padding: 10px;
+    padding: 10px 20px;
+  }
+  .jumbotron .buttons {
+    margin-top: 7rem;
+  }
+  .jumbotron .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .form .display-4 {
+    font-size: 5em;
+  }
+  .form .free {
+    font-size: 7em;
+  }
+
+  .dashboard .display-4 {
+    font-size: 4.5em;
+    margin-right: 4px;
+  }
+  .dashboard .free {
+    font-size: 6em;
   }
 }
 @media (min-width: 1300px) {

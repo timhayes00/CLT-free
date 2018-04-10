@@ -1,4 +1,4 @@
-// To install -->
+// To install:
 // npm install -g sass
 // sass --version
 // sass public/stylesheets/sass/main.scss public/stylesheets/css/style.css
@@ -24,6 +24,9 @@ $body-font: 1.2em;
 //----------------
 // *** RULES ***
 //----------------
+
+// <--- landing page --->
+
 .bg {
     background: linear-gradient(rgba(121, 170, 212, 0.788235294117647), transparent 60%), linear-gradient(0deg, #ffffff, transparent 30%), #ffffff url(../../img/bg.gif) no-repeat;
     background-size: cover;
@@ -35,30 +38,41 @@ $body-font: 1.2em;
     h1 {
         display: inline;
         font-family: $Stylish;
-        font-size: $medium-font;
         letter-spacing: 3px;
+    }
+    .logo {
+        color: black;
+        &:hover { 
+            color: #000; 
+            text-decoration-line: none;
+        }
     }
     .display-4 {
         color: #5a97cc;
         text-shadow: 1px 1px 0px white;
-    }
-    .description {
-        background: linear-gradient(to right, white ,#fbfbfba6);
-        padding: 3px;
-        display: inline;
-        border-radius: 5px;
-        font-size: 1.2rem;
+        font-size: $small-font;
     }
     .free {
         font-family: $IM-Fell;
         font-size: $small-font;
         text-shadow: 2px 2px 8px white;
     }
+    .description {
+        background: linear-gradient(to right, white ,#fbfbfba6);
+        padding: 3px;
+        display: inline;
+        border-radius: 5px;
+        font-size: 1.1rem;
+    }
     .looking {
         border: none;
+        padding: 20px;
         background: rgba(121, 170, 212, 0.78);
         &:hover { background: #5a97cc; }
         // box-shadow: inset 0px 0px 11px 3px #fff;
+    }
+    .navbar-brand {
+        font-size: 1rem;
     }
     .post {
         border-radius: 2px;
@@ -72,29 +86,74 @@ $body-font: 1.2em;
         }
     }
     .login {
-        color: #5a97cc;
+        color: #406280;
+        border-bottom: 2px solid #406280;
+        &:hover { 
+            color: #213648; 
+            border-color: #213648;
+        }
+    }
+    .buttons {
+        margin-top: 2rem;
     }
 }
+
+.modal {
+    .post-modal {
+        padding: 20px 0;
+        background-color: $carolina-blue;
+        color: white;
+        &:hover { 
+            color: white;
+            background-color: #406280; 
+        }
+    }
+    .submit {
+        float: right;
+        background: $carolina-blue;
+        border: none;
+        &:hover { background: #406280; }
+    }
+}
+
+// <--- dashboard pages --->
 
 .dashboard {
     min-height: 10vh;
+    background: linear-gradient(-0deg, #909090, #fdfdfd);
+    .display-4 {
+        font-size: 2.5em;
+        display: inline;
+        margin-right: 2px;
+    }
+    .free {
+        font-size: 3em;
+    }
+    nav {
+        display: block;
+        .post {
+            background: white;
+            color: #5a97cc; 
+            &:hover { 
+                background: $carolina-blue;
+                border-color: $carolina-blue;
+                color: white;
+            }
+        }
+    }
+}
+
+.heading {
+    background-color: $carolina-blue;
+    color: white;
+    padding: 10px 0;
+    font-family: $Stylish;
+    font-size: $xsmall-font;
+    text-shadow: 2px 2px 8px #5a5656;
+    border-radius: 0;
 }
 
 .content {
-    .scrollbox {
-        height: 730px;
-        overflow-x: scroll;
-        margin: 0 11px;
-    }
-    .heading {
-        background-color: $carolina-blue;
-        color: white;
-        padding: 10px 0;
-        font-family: $Stylish;
-        font-size: $xsmall-font;
-        text-shadow: 2px 2px 8px #5a5656;
-        border-radius: 4px;
-    }
     .section {
         background: lightgray;
         padding: 10px;
@@ -102,6 +161,8 @@ $body-font: 1.2em;
         border-radius: 5px;
     }
 }
+
+// <--- cms forms --->
 
 .form {
     box-shadow: 0px 0px 20px 7px #fff;
@@ -120,7 +181,7 @@ $body-font: 1.2em;
         float: right;
         background: $carolina-blue;
         border: none;
-        &:hover { background: #0b233b; }
+        &:hover { background: #406280; }
     }
 }
 
@@ -142,18 +203,44 @@ $laptop: 1300px;
 @media (min-width: $tablet) {
 
     .jumbotron {
-        h1 {
-            font-size: $large-font;
+        .display-4 {
+            font-size: 6em;
         }
         .free {
             font-size: $medium-font;
         }
         .description {
-            padding: 10px;
+            padding: 10px 20px;
+        }
+        .buttons {
+            margin-top: 7rem;
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+        }
+    }
+
+    .form {
+        .display-4 {
+            font-size: 5em;
+        }
+        .free {
+            font-size: 7em;
+        }
+    }
+
+    .dashboard {
+        .display-4 {
+            font-size: $small-font;
+            margin-right: 4px;
+        }
+        .free {
+            font-size: 6em;
         }
     }
     
 }
+
 
 @media (min-width: $laptop) {
 
