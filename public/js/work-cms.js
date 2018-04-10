@@ -18,11 +18,10 @@ $(document).ready(function() {
       }
       // Constructing a newJobPost object to hand to the database
       var newJobPost = {
-        creator:"Placeholder",
+        creator: "Placeholder",
         job_name: jobName,
         job_description: jobDescription,
         job_category: jobCategory,
-        budget: jobBudget,
         email: jobEmail
       };
   

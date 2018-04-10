@@ -8,18 +8,16 @@ module.exports = function(app) {
 
 //GET route for jobs view page
 app.get("/api/jobs", function(req, res) {
-    db.placeholer.findAll(function(data) {
+    db.Job.findAll(function(data) {
     res.json(data);
     });
 });
 
 //POST route for jobs submission page
 app.post("/api/jobs", function(req, res) {
-    db.placeholer.create({
-        title: req.body.title,
-        body: req.body.body,
-        category: req.body.category
-    })
+    db.Job.create(
+        req.body
+    )
     .then(function(result) {
         res.json(result);
     });

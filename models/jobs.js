@@ -25,10 +25,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      budget: {
-          type: DataTypes.INTEGER,
-          allowNull: false
-      },
       email: {
           type: Datatypes.STRING,
           validate: {
