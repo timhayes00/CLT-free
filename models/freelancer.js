@@ -1,44 +1,58 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Freelancer = sequelize.define("Freelancer", {
     // Giving the Author model a name of type STRING
-    creator: {
+    freelancer_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       },
-      job_name: {
+      skill_set: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
-      job_description: {
-        type: DataTypes.TEXT,
+      img_link: {
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
-      job_category: {
+      bio: {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      budget: {
-          type: DataTypes.INTEGER,
-          allowNull: false
+      portfolio: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
+      linked_in: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
+      rate_requested: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       email: {
-          type: Datatypes.STRING,
-          validate: {
-              isEmail: true
-          }
+        type: Datatypes.STRING,
+        validate: {
+          isEmail: true
+        }
       }
     }
   });
 
-  Freelancer.associate = function(models) {
+  Freelancer.associate = function (models) {
     // Associating Freelancer with Messages
     // When an Freelancer is deleted, also delete any associated Messages
     Freelancer.hasMany(models.Message, {
@@ -46,9 +60,8 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  Freelancer.associate = function(models) {
+  Freelancer.associate = function (models) {
     // Associating Freelancer with Jobs
-    // When an Freelancer is deleted, also delete any associated Jobs
     Freelancer.hasMany(models.Job, {
       onDelete: "cascade"
     });
