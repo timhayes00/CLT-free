@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
     // Giving the Author model a name of type STRING
     creator: {
@@ -24,34 +24,26 @@ module.exports = function(sequelize, DataTypes) {
       job_category: {
         type: DataTypes.TEXT,
         allowNull: false
-      },
-      email: {
-          type: Datatypes.STRING,
-          validate: {
-              isEmail: true
-          }
       }
+      //Currently trying to implement the data for email only in the user table
+      // ,
+      // email: {
+      //   type: Datatypes.STRING,
+      //   validate: {
+      //     isEmail: true
+      //   }
+      // }
     }
   });
 
-  Job.associate = function(models) {
-    // Associating Freelancer with Messages
-    // When an Freelancer is deleted, also delete any associated Messages
-    Job.hasMany(models.Message, {
-      onDelete: "cascade"
-    });
-    // Associating Jobs with Freelancer
-    Job.hasOne(models.Freelancer, {
-      onDelete: "cascade"
-    });
-  };
+  Job.associate = function (models) {
 
-  //redundant, but leaving this here in case it's the preferred method
-  // Job.associate = function(models) {
-  //   // Associating Jobs with Freelancer
-  //   Job.hasOne(models.Freelancer, {
-  //   });
-  // };
+    Job.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
 
   return Job;
 };

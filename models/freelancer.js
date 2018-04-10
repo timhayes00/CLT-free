@@ -42,30 +42,39 @@ module.exports = function (sequelize, DataTypes) {
       rate_requested: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
-      email: {
-        type: Datatypes.STRING,
-        validate: {
-          isEmail: true
-        }
       }
+      //Right now we are not implementing email inside the freelancer table
+      // ,
+      // email: {
+      //   type: Datatypes.STRING,
+      //   validate: {
+      //     isEmail: true
+      //   }
+      // }
     }
   });
 
-  Freelancer.associate = function (models) {
-    // Associating Freelancer with Messages
-    // When an Freelancer is deleted, also delete any associated Messages
-    Freelancer.hasMany(models.Message, {
-      onDelete: "cascade"
-    });
-  };
+  //==========================================
+  //Saving this code block for later if we implement the -Message- functionality
+  // Freelancer.associate = function (models) {
+  //   // Associating Freelancer with Messages
+  //   // When an Freelancer is deleted, also delete any associated Messages
+  //   Freelancer.hasMany(models.Message, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+  //==========================================
 
-  Freelancer.associate = function (models) {
     // Associating Freelancer with Jobs
-    Freelancer.hasMany(models.Job, {
-      onDelete: "cascade"
+    // Will add a jobId attribute to Freelancer to hold the primary key value for Job
+    Freelancer.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-  };
 
   return Freelancer;
 };
+
+  //in users model, associate "has many" to jobs
+  //freelancers assciate "belongs to" user

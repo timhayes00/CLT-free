@@ -8,7 +8,7 @@ CREATE TABLE jobs (
   job_name VARCHAR(255) NOT NULL,
   job_description TEXT NOT NULL,
   job_category VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  -- email VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
   );
 
@@ -20,23 +20,23 @@ CREATE TABLE freelancers (
   bio TEXT NOT NULL,
   portfolio VARCHAR(255) NOT NULL,
   linked_in VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  -- email VARCHAR(255) NOT NULL,
   rate_requested INTEGER NOT NULL,
   PRIMARY KEY (id)
   );
 
 CREATE TABLE users (
   id INTEGER AUTO_INCREMENT NOT NULL,
-  user_name VARCHAR(255),
   email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 )
   
-CREATE TABLE message (
-  id INTEGER AUTO_INCREMENT NOT NULL,
-  -- foreign key from the freelancers table with the freelancers id,
-  -- foreign key from the jobs table with the jobs id
-  message TEXT NOT NULL,
-  budget_proposed INT NOT NULL,
-  PRIMARY KEY (id)
-  );
+-- CREATE TABLE message (
+--   id INTEGER AUTO_INCREMENT NOT NULL,
+--   -- foreign key from the freelancers table with the freelancers id,
+--   -- foreign key from the jobs table with the jobs id
+--   message TEXT NOT NULL,
+--   budget_proposed INT NOT NULL,
+--   PRIMARY KEY (id)
+--   );
