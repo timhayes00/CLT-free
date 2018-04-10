@@ -48,8 +48,6 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     
-
-    
     function(req, email, password, done) {
 
 		// find a user whose email is the same as the forms email
@@ -110,8 +108,6 @@ module.exports = function(passport) {
             return done(null, rows[0]);			
 		
 		});
-		
-
 
     }));
 
