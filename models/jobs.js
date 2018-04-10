@@ -38,10 +38,10 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Jobs.associate = function(models) {
+  Job.associate = function(models) {
     // Associating Freelancer with Messages
     // When an Freelancer is deleted, also delete any associated Messages
-    Jobs.hasMany(models.Message, {
+    Job.hasMany(models.Message, {
       onDelete: "cascade"
     });
   };
