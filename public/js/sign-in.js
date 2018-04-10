@@ -22,8 +22,10 @@ $(document).ready(function() {
         method: "POST",
         url: "/api/login",
         data: newSignIn
-      })
+      }).then(function(data) {
+        window.location.replace(data);
   
-    });
+      });
 
+  })
 })

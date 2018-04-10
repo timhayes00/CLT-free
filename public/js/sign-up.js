@@ -22,7 +22,9 @@ $(document).ready(function() {
         method: "POST",
         url: "/api/sign-up",
         data: newSignUp
-      })
+      }).then(function(data) {
+        window.location.replace(data);
   
     });
+  })
 })
