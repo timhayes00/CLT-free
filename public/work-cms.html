@@ -62,10 +62,6 @@
         </div> 
     </header>
 
-    <div class="new-job" style="display: none;">
-
-    </div>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -74,44 +70,3 @@
 
 </html>
 
-<script type="text/javascript">
-
-    $(".submit").on("click", function(event) {
-      event.preventDefault();
-
-        // Here we grab the form elements
-            var jobName = $("#job-name").val().trim();
-            var jobCategory = $("#job-category").val();
-            var email = $("#email").val().trim();
-            var jobDescription = $("#job-description").val().trim();
-
-        $(".new-job").append('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobName + '</h5><h5>Job Category: ' + jobCategory + ' </h5><h5>Email: ' + email + '</h5><h5>Job Description: ' + '</h5></div></div>');
-
-        // $( ".new-job" ).load( "ajax/work.html .row", function() {
-        //     alert( "Your post has been submitted!" );
-        // });
-
-        // $.post("/api/tables", newReservation,
-        //     function(data) {
-
-        //     // If a table is available... tell user they are booked.
-        //     if (data) {
-        //       alert("Yay! You are officially booked!");
-        //     }
-
-        //     // If a table is available... tell user they on the waiting list.
-        //     else {
-        //         alert("Sorry you are on the wait list");
-        //     }
-
-        //     // Clear the form when submitting
-        //     $("#reserve-name").val("");
-        //     $("#reserve-phone").val("");
-        //     $("#reserve-email").val("");
-        //     $("#reserve-unique-id").val("");
-
-        // });
-
-    });
-
-</script>
