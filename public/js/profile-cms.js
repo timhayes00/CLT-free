@@ -27,8 +27,8 @@ $(document).ready(function() {
         bio: bio,
         portfolio: portfolio,
         linked_in: linkedin,
-        email: email,
-        rate_requested: rate
+        rate_requested: rate,
+        email: email
       };
   
       console.log(newFreelancerPost);

@@ -56,9 +56,10 @@ passport.deserializeUser(function(id, cb) {
 // app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/app-controller.js");
-
-app.use(routes);
+require("./routes/freelancer-api-routes.js")(app);
+require("./routes/jobs-api-routes.js")(app);
+require("./routes/profile-api-routes.js")(app);
+require("./routes/html.js")(app);
 
 var db = require("./models");
 
