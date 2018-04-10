@@ -40,13 +40,18 @@ module.exports = function(sequelize, DataTypes) {
     Job.hasMany(models.Message, {
       onDelete: "cascade"
     });
-  };
-
-  Job.associate = function(models) {
     // Associating Jobs with Freelancer
     Job.hasOne(models.Freelancer, {
+      onDelete: "cascade"
     });
   };
+
+  //redundant, but leaving this here in case it's the preferred method
+  // Job.associate = function(models) {
+  //   // Associating Jobs with Freelancer
+  //   Job.hasOne(models.Freelancer, {
+  //   });
+  // };
 
   return Job;
 };
