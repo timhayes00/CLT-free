@@ -40,6 +40,13 @@ $body-font: 1.2em;
         font-family: $Stylish;
         letter-spacing: 3px;
     }
+    .logo {
+        color: black;
+        &:hover { 
+            color: #000; 
+            text-decoration-line: none;
+        }
+    }
     .display-4 {
         color: #5a97cc;
         text-shadow: 1px 1px 0px white;
@@ -55,13 +62,17 @@ $body-font: 1.2em;
         padding: 3px;
         display: inline;
         border-radius: 5px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .looking {
         border: none;
+        padding: 20px;
         background: rgba(121, 170, 212, 0.78);
         &:hover { background: #5a97cc; }
         // box-shadow: inset 0px 0px 11px 3px #fff;
+    }
+    .navbar-brand {
+        font-size: 1rem;
     }
     .post {
         border-radius: 2px;
@@ -75,13 +86,33 @@ $body-font: 1.2em;
         }
     }
     .login {
-        color: #2d5280;
+        color: #406280;
+        border-bottom: 2px solid #406280;
         &:hover { 
-            border-bottom: 2px solid #2d5280; 
+            color: #213648; 
+            border-color: #213648;
         }
     }
     .buttons {
-        margin-top: 4rem;
+        margin-top: 2rem;
+    }
+}
+
+.modal {
+    .post-modal {
+        padding: 20px 0;
+        background-color: $carolina-blue;
+        color: white;
+        &:hover { 
+            color: white;
+            background-color: #406280; 
+        }
+    }
+    .submit {
+        float: right;
+        background: $carolina-blue;
+        border: none;
+        &:hover { background: #406280; }
     }
 }
 
@@ -89,13 +120,14 @@ $body-font: 1.2em;
 
 .dashboard {
     min-height: 10vh;
+    background: linear-gradient(-0deg, #909090, #fdfdfd);
     .display-4 {
-        font-size: $small-font;
+        font-size: 2.5em;
         display: inline;
         margin-right: 2px;
     }
     .free {
-        font-size: $small-font;
+        font-size: 3em;
     }
     nav {
         display: block;
@@ -149,7 +181,7 @@ $body-font: 1.2em;
         float: right;
         background: $carolina-blue;
         border: none;
-        &:hover { background: #0b233b; }
+        &:hover { background: #406280; }
     }
 }
 
@@ -178,14 +210,20 @@ $laptop: 1300px;
             font-size: $medium-font;
         }
         .description {
-            padding: 10px;
+            padding: 10px 20px;
         }
         .buttons {
-            margin-top: 8rem;
+            margin-top: 7rem;
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
         }
     }
 
     .form {
+        .display-4 {
+            font-size: 5em;
+        }
         .free {
             font-size: 7em;
         }

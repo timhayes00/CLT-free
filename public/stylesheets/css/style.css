@@ -12,6 +12,13 @@
   font-family: "Stylish", sans-serif;
   letter-spacing: 3px;
 }
+.jumbotron .logo {
+  color: black;
+}
+.jumbotron .logo:hover {
+  color: #000;
+  text-decoration-line: none;
+}
 .jumbotron .display-4 {
   color: #5a97cc;
   text-shadow: 1px 1px 0px white;
@@ -27,14 +34,18 @@
   padding: 3px;
   display: inline;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .jumbotron .looking {
   border: none;
+  padding: 20px;
   background: rgba(121, 170, 212, 0.78);
 }
 .jumbotron .looking:hover {
   background: #5a97cc;
+}
+.jumbotron .navbar-brand {
+  font-size: 1rem;
 }
 .jumbotron .post {
   border-radius: 2px;
@@ -48,25 +59,46 @@
   color: #5a97cc;
 }
 .jumbotron .login {
-  color: #2d5280;
+  color: #406280;
+  border-bottom: 2px solid #406280;
 }
 .jumbotron .login:hover {
-  border-bottom: 2px solid #2d5280;
+  color: #213648;
+  border-color: #213648;
 }
 .jumbotron .buttons {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.modal .post-modal {
+  padding: 20px 0;
+  background-color: #79aad4;
+  color: white;
+}
+.modal .post-modal:hover {
+  color: white;
+  background-color: #406280;
+}
+.modal .submit {
+  float: right;
+  background: #79aad4;
+  border: none;
+}
+.modal .submit:hover {
+  background: #406280;
 }
 
 .dashboard {
   min-height: 10vh;
+  background: linear-gradient(0deg, #909090, #fdfdfd);
 }
 .dashboard .display-4 {
-  font-size: 4.5em;
+  font-size: 2.5em;
   display: inline;
   margin-right: 2px;
 }
 .dashboard .free {
-  font-size: 4.5em;
+  font-size: 3em;
 }
 .dashboard nav {
   display: block;
@@ -118,7 +150,7 @@
   border: none;
 }
 .form .submit:hover {
-  background: #0b233b;
+  background: #406280;
 }
 
 .back-to {
@@ -139,12 +171,18 @@
     font-size: 8em;
   }
   .jumbotron .description {
-    padding: 10px;
+    padding: 10px 20px;
   }
   .jumbotron .buttons {
-    margin-top: 8rem;
+    margin-top: 7rem;
+  }
+  .jumbotron .navbar-brand {
+    font-size: 1.25rem;
   }
 
+  .form .display-4 {
+    font-size: 5em;
+  }
   .form .free {
     font-size: 7em;
   }
