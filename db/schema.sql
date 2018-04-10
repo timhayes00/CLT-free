@@ -8,7 +8,6 @@ CREATE TABLE jobs (
   job_name VARCHAR(255) NOT NULL,
   job_description TEXT NOT NULL,
   job_category VARCHAR(255) NOT NULL,
-  budget INTEGER NOT NULL,  
   email VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
   );
@@ -25,6 +24,13 @@ CREATE TABLE freelancers (
   rate_requested INTEGER NOT NULL,
   PRIMARY KEY (id)
   );
+
+CREATE TABLE users (
+  id INTEGER AUTO_INCREMENT NOT NULL,
+  user_name VARCHAR(255),
+  email VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+)
   
 CREATE TABLE message (
   id INTEGER AUTO_INCREMENT NOT NULL,
