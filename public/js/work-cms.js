@@ -22,6 +22,7 @@ $(document).ready(function() {
         job_name: jobName,
         job_description: jobDescription,
         job_category: jobCategory,
+        budget: jobBudget,
         email: jobEmail
       };
   
