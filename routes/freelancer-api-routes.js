@@ -16,27 +16,23 @@ module.exports = function(app) {
   app.get("/api/freelancers", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     db.Freelancer.findAll({
-      where: query,
-      include: [db.Job]
-    }).then(function(dbFreelancer) {
-      res.json(dbFreelancer);
+    }).then(function(result) {
+      res.json(result);
     });
   });
 
   // POST route for creating new freelance post
   app.post("/api/freelancers", function(req, res) {
-    db.placeholer.create({
-        title: req.body.title,
-        body: req.body.body,
-        category: req.body.category
-    })
+    db.Freelancer.create(
+        body.req
+    )
     .then(function(result) {
         res.json(result);
     });
 });
 
   // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
+  app.delete("/api/freelancers/:id", function(req, res) {
     db.Post.destroy({
       where: {
         id: req.params.id
@@ -47,7 +43,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
+  app.put("/api/freelancers", function(req, res) {
     db.Post.update(
       req.body,
       {
