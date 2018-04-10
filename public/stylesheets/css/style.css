@@ -104,13 +104,14 @@
   display: block;
 }
 .dashboard nav .post {
-  background: white;
-  color: #5a97cc;
-}
-.dashboard nav .post:hover {
   background: #79aad4;
   border-color: #79aad4;
   color: white;
+}
+.dashboard nav .post:hover {
+  background: white;
+  border-color: white;
+  color: #5a97cc;
 }
 
 .heading {
