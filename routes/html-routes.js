@@ -1,6 +1,6 @@
 var path = require("path");
 // Requiring our models
-var db = require("../models");
+// var db = require("../models");
 
 module.exports = function(app) {
 
@@ -31,9 +31,9 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/work-cms.html"));
     });
 
-    //route to display user dashboard
-    app.get("/profiles/:id", function(req, res) {
-        res.render("placeholder.handlebars", handlebarsobj);
-    });
+    //route to display user dashboard, need to incorporate id
+    // app.get("/profile/", function(req, res) {
+        
+    // });
 
 }

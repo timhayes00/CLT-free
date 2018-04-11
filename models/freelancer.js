@@ -40,8 +40,11 @@ module.exports = function (sequelize, DataTypes) {
         }
       },
       rate_requested: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
       }
       //Right now we are not implementing email inside the freelancer table
       // ,
