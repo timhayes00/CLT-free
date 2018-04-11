@@ -14,7 +14,7 @@
 
     <header>
         <div class="jumbotron dashboard mb-0 pt-3 pb-4">
-            <a href="/" class="logo"><h1 class="display-4">CLT</h1><h1 class="free">free</h1></a>
+            <a href="index.html" class="logo"><h1 class="display-4">CLT</h1><h1 class="free">free</h1></a>
             <nav class="navbar navbar-expand-lg float-right mt-md-4">
                 <a class="navbar-brand login" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
                 <button class="navbar-brand post btn btn-outline-secondary ml-1 mr-0" data-toggle="modal" data-target="#postModal">POST</button>
@@ -33,14 +33,14 @@
             </button>
         </div>
         <div class="modal-body">
-        <form id="sign-in-form">
+        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email Address:</label>
-                <input type="email" class="form-control" id="sign-in-email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password:</label>
-                <input type="password" class="form-control" id="sign-in-password" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary submit">Sign In</button>
             <small id="emailHelp" class="form-text"><strong></strong>Don't Have an Account? <a href="" data-toggle="modal" data-target="#createAccountModal">Create An Account</a>.</small>
@@ -61,14 +61,14 @@
             </button>
         </div>
         <div class="modal-body">
-        <form id="sign-up-form">
+        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Enter your Email Address:</label>
-                <input type="email" class="form-control" id="sign-up-email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Create a Password:</label>
-                <input type="password" class="form-control" id="sign-up-password" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary submit">Create Account</button>
         </form>
@@ -88,46 +88,20 @@
             </button>
         </div>
         <div class="modal-body">
-            <a href="/freelancer-submit" class="btn btn-block post-modal">Post a Profile</a>
-            <a href="/job-submit" class="btn btn-block post-modal">Post a Job</a>
+            <a href="profile-cms.html" class="btn btn-block post-modal">Post a Profile</a>
+            <a href="work-cms.html" class="btn btn-block post-modal">Post a Job</a>
         </div>
         </div>
     </div>
     </div>
 
-    <h2 class="text-center heading">Available Jobs</h2>
+    <h2 class="text-center heading">My Profile</h2>
 
     <div class="container-fluid content">
-
-    <!-- filter by job category -->
-    <div class="col-auto my-3 row">
-        <select class="custom-select col" id="inlineFormCustomSelect">
-                <option selected disabled>Filter by Job Category</option>
-                <option>Web Design</option>
-                <option>Legal Services</option>
-                <option>Handyman Services</option>
-                <option>Lawn Care</option>
-                <option>Graphic Design</option>
-                <option>Web Development</option>
-                <option>Copywriting</option>
-                <option>Photography</option>
-                <option>Video Production</option>
-        </select>
-    </div>
     
-    <!-- jobs dashboard -->
-    <div class="row jobs-dashboard">
+    <!-- profile dashboard -->
+    <div class="row profile-dashboard">
 
-        <!-- example repeating element -->
-        <!-- <div class="col-md-4 col-lg-3 my-2">
-            <div class="section">
-            <h5>Job Title: </h5>
-            <h5>Job Category: </h5>
-            <h5>Email: </h5>
-            <h5>Job Description: </h5>
-            </div>
-        </div> -->
-        <!-- end repeating element -->
 
     </div>
 
@@ -138,36 +112,8 @@
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/sign-in.js" type="text/javascript"></script>
-<script src="js/sign-up.js" type="text/javascript"></script>
-<!-- AJAX GET call -->
-<script type="text/javascript">
-
-    var currentURL = window.location.origin;
-
-    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-    $.ajax({ url: currentURL + "/api/jobs", method: "GET" })
-    .then(function(jobsData) {
-
-        // Here we are logging the URL so we have access to it for troubleshooting
-        console.log("------------------------------------");
-        console.log("URL: " + currentURL + "/api/jobs");
-        console.log("------------------------------------");
-
-        // Here we then log the jobsData to console, where it will show up as an object.
-        console.log(jobsData);
-        console.log("------------------------------------");
-
-        // Loop through and display each of the customers
-        for (var i = 0; i < jobsData.length; i++) {
-
-            // prepend each job to .jobs-dashboard
-            $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
-
-        }
-    });
-
-</script>
+<!-- work-cms.js (AJAX POST call) -->
+<script src="js/work-cms.js" type="text/javascript"></script>
 
 </body>
 
