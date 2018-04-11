@@ -77,9 +77,9 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false
       }
     })
-    Freelancer.belongsTo(models.User, {
-      foreignKey: {name: 'email'}
-    })
+    // Freelancer.belongsTo(models.User, {
+    //   foreignKey: {name: 'email'}
+    // })
     
   }
     //EXAMPLE: User.belongsTo(Company); // Will add companyId to user
