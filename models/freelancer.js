@@ -7,45 +7,46 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1]
       },
-      skill_set: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      img_link: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      bio: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      },
-      portfolio: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      linked_in: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      rate_requested: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
+    },
+    skill_set: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
       }
+    },
+    img_link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    portfolio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    linked_in: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    rate_requested: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    }
       //Right now we are not implementing email inside the freelancer table
       // ,
       // email: {
@@ -54,7 +55,7 @@ module.exports = function (sequelize, DataTypes) {
       //     isEmail: true
       //   }
       // }
-    }
+    
   });
 
   //==========================================

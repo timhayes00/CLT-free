@@ -29,7 +29,7 @@ require("./routes/freelancer-api-routes.js")(app);
 require("./routes/jobs-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/login-routes.js")(app);
-require("./routes/html.js")(app);
+require("./routes/html-routes.js")(app);
 
 var db = require("./models");
 
