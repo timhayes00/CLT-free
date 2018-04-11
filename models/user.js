@@ -28,8 +28,3 @@ module.exports = function(sequelize, DataTypes) {
   
     return User;
   };
-  
-
-
-  //in users model, associate "has many" to jobs
-  //freelancers assciate "belongs to" user
