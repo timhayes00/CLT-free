@@ -1,3 +1,5 @@
+  USE CLTfree_db;
+  
   INSERT INTO jobs (creator, job_name, job_description, job_category, email)
   VALUES ("Foo", "Foo Portfolio", "Hello, my name is Foo and I need an online portfolio of my painting work", "Web Design", "foo@gmail.com");
   
