@@ -37,19 +37,24 @@
   font-size: 1.1rem;
 }
 .jumbotron .looking {
+  font-family: "EB Garamond", serif;
+  letter-spacing: 1px;
   border: none;
+  border-radius: 0;
   padding: 20px;
-  background: rgba(121, 170, 212, 0.78);
+  background: #5a97cc;
+  box-shadow: 0px 2px 0px 0px #fff;
 }
 .jumbotron .looking:hover {
-  background: #5a97cc;
+  background: #406280;
 }
 .jumbotron .navbar-brand {
   font-size: 1rem;
 }
 .jumbotron .post {
-  border-radius: 2px;
-  border: 2px solid white;
+  font-family: "EB Garamond", serif;
+  border-radius: 0;
+  border: 1px solid white;
   padding: 10px 20px;
   color: white;
   background: rgba(255, 255, 255, 0.4);
@@ -59,12 +64,13 @@
   color: #5a97cc;
 }
 .jumbotron .login {
-  color: #406280;
-  border-bottom: 2px solid #406280;
+  font-family: "EB Garamond", serif;
+  color: #213648;
+  border-bottom: 1px solid #213648;
 }
 .jumbotron .login:hover {
-  color: #213648;
-  border-color: #213648;
+  color: white;
+  border-color: white;
 }
 .jumbotron .buttons {
   margin-top: 2rem;
@@ -104,24 +110,26 @@
   display: block;
 }
 .dashboard nav .post {
+  background: white;
+  border-color: white;
+  color: #6a98bf;
+}
+.dashboard nav .post:hover {
   background: #79aad4;
   border-color: #79aad4;
   color: white;
 }
-.dashboard nav .post:hover {
-  background: white;
-  border-color: white;
-  color: #5a97cc;
-}
 
 .heading {
-  background-color: #79aad4;
+  background-color: #709fc7;
   color: white;
-  padding: 10px 0;
-  font-family: "Stylish", sans-serif;
-  font-size: 3em;
-  text-shadow: 2px 2px 8px #5a5656;
+  padding: 8px 0 12px 0;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 2px;
+  font-size: 2em;
+  text-shadow: 2px 2px 2px #3a3a3a;
   border-radius: 0;
+  box-shadow: inset 0px 11px 6px -10px #131313, inset 0px -1px 4px 0px #131313;
 }
 
 .content .section {
@@ -138,8 +146,8 @@
   border-radius: 5px;
 }
 .form label {
-  font-family: "Stylish", sans-serif;
-  font-size: 1.5em;
+  font-family: "EB Garamond", serif;
+  font-size: 1.3em;
 }
 .form input::placeholder,
 .form textarea::placeholder {
@@ -175,17 +183,17 @@
     padding: 10px 20px;
   }
   .jumbotron .buttons {
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
   .jumbotron .navbar-brand {
     font-size: 1.25rem;
   }
 
   .form .display-4 {
-    font-size: 5em;
+    font-size: 3em;
   }
   .form .free {
-    font-size: 7em;
+    font-size: 4em;
   }
 
   .dashboard .display-4 {
@@ -195,9 +203,14 @@
   .dashboard .free {
     font-size: 6em;
   }
+
+  .heading {
+    padding: 10px 0 15px 0;
+    font-size: 3em;
+  }
 }
 @media (min-width: 1300px) {
   .jumbotron .buttons {
-    margin: 10rem;
+    margin: 7rem 3rem 0 3rem;
   }
 }
