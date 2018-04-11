@@ -70,12 +70,18 @@ module.exports = function (sequelize, DataTypes) {
 
     // Associating Freelancer with Jobs
     // Will add a jobId attribute to Freelancer to hold the primary key value for Job
+  Freelancer.associate = function (models) {
     Freelancer.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
-    });
-
+    })
+    Freelancer.belongsTo(models.User, {
+      foreignKey: {name: 'email'}
+    })
+    
+  }
+    //EXAMPLE: User.belongsTo(Company); // Will add companyId to user
   return Freelancer;
 };
 
