@@ -9,14 +9,14 @@ $(document).ready(function() {
         var category = $("#job-category").val();
         var portfolio = $("#portfolio").val().trim();
         var linkedin = $("#linkedin").val().trim();
-        var email = $("#email").val().trim();
+        // var email = $("#email").val().trim();
         var rate = $("#rate").val().trim();
         var image = $("#profile-image").val().trim();
         var bio = $("#bio").val().trim();
         //code for grabbing user id of logged in user
      
       // Wont submit the post if we are missing a body or a title
-      if (!freelancerName.val().trim() || !category.val().trim() || !portfolio.val().trim() || !linkedin.val().trim() || !email.val().trim() || !rate.val().trim() || !image.val().trim()) {
+      if (!freelancerName.val().trim() || !category.val().trim() || !portfolio.val().trim() || !linkedin.val().trim() || !rate.val().trim() || !image.val().trim()) {
         return;
       }
       // Constructing a newJobPost object to hand to the database
@@ -28,7 +28,7 @@ $(document).ready(function() {
         portfolio: portfolio,
         linked_in: linkedin,
         rate_requested: rate,
-        email: email
+        // email: email
       };
   
       console.log(newFreelancerPost);
