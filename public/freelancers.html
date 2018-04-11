@@ -122,7 +122,37 @@
         <!-- example repeating element -->
         <!-- <div class="col-md-4 col-lg-3 my-2">
             <div class="section">
-                <img src="" alt="">
+                <img src="http://krishnagroupindia.com/wp-content/uploads/2018/01/pexels-photo-428339.jpeg" alt="" class="img-fluid mx-auto d-block my-3">
+                <h5>Name: </h5>
+                <h5>Skills: </h5>
+                <h5>Portfolio: </h5>
+                <h5>Linkedin: </h5>
+                <h5>Email: </h5>
+                <h5>Requested Rate: </h5>
+                <h5>Bio: </h5>
+            </div>
+        </div> -->
+        <!-- end repeating element -->
+
+        <!-- example repeating element -->
+        <!-- <div class="col-md-4 col-lg-3 my-2">
+            <div class="section">
+                <img src="https://media1.popsugar-assets.com/files/thumbor/f6mR3MTC66MfnZFc0qGrgcnZ_fg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/12/19/048/n/1922441/tmp_f17bIy_7aef35b1ab387138_k.jpg" alt="" class="img-fluid mx-auto d-block my-3">
+                <h5>Name: </h5>
+                <h5>Skills: </h5>
+                <h5>Portfolio: </h5>
+                <h5>Linkedin: </h5>
+                <h5>Email: </h5>
+                <h5>Requested Rate: </h5>
+                <h5>Bio: </h5>
+            </div>
+        </div> -->
+        <!-- end repeating element -->
+
+        <!-- example repeating element -->
+        <!-- <div class="col-md-4 col-lg-3 my-2">
+            <div class="section">
+                <img src="http://www.sindhurealestate.co.in/wp-content/uploads/2017/09/person-detail.person_image.jpeg" alt="" class="img-fluid mx-auto d-block my-3">
                 <h5>Name: </h5>
                 <h5>Skills: </h5>
                 <h5>Portfolio: </h5>
@@ -167,7 +197,7 @@
         for (var i = 0; i < freelancersData.length; i++) {
 
             // prepend each profile to .freelancers-dashboard
-            $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + '><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
+            $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
 
         }
     });
