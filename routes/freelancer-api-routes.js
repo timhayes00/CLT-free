@@ -8,6 +8,8 @@ var path = require("path");
 // Requiring our models
 var db = require("../models");
 
+require("body-parser")
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -24,7 +26,7 @@ module.exports = function(app) {
   // POST route for creating new freelance post
   app.post("/api/freelancers", function(req, res) {
     db.Freelancer.create(
-        body.req
+        req.body
     )
     .then(function(result) {
         res.json(result);
