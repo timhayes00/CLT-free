@@ -28,9 +28,3 @@ module.exports = function(sequelize, DataTypes) {
   
     return User;
   };
-  
-//Tonights tasks for Tim: sync tables with models
-//                  Look into testing
-
-  //in users model, associate "has many" to jobs
-  //freelancers assciate "belongs to" user
