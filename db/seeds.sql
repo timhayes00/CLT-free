@@ -2,6 +2,10 @@
   
   INSERT INTO jobs (creator, job_name, job_description, job_category)
   VALUES ("Foo", "Foo Portfolio", "Hello, my name is Foo and I need an online portfolio of my painting work", "Web Design");
+
+  
+  INSERT INTO jobs (creator, job_name, job_description, job_category)
+  VALUES ("Foo", "Foo Portfolio", "Hello, my name is Foo and I need an online portfolio of my painting work", "Web Design");
   
   INSERT INTO jobs (creator, job_name, job_description, job_category)
   VALUES ("Bob", "Bob's Burgers", "I need a lawyer to defend against a copyright infringement suit", "Legal Services");
