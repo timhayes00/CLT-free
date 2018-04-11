@@ -21,3 +21,6 @@
   
   INSERT INTO freelancers (freelancer_name, skill_set, img_link, bio, portfolio, linked_in, rate_requested)
   VALUES ("Sterling Archer", "Legal Services", "https://upload.wikimedia.org/wikipedia/commons/3/3a/Bos_grunniens_at_Yundrok_Yumtso_Lake.jpg", "Well, Legal-ish.  Willing to do anything for the right price.  Also, the worldest greatest secret agent", "http://www.archerthespy.com", "http://www.linkedin.com", 1000);
+
+  INSERT INTO users (email, password)
+  VALUES ("foo@gmail.com", "foo");
