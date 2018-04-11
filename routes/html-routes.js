@@ -1,6 +1,7 @@
 var path = require("path");
 // Requiring our models
 // var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
@@ -32,8 +33,9 @@ module.exports = function(app) {
     });
 
     //route to display user dashboard, need to incorporate id
-    // app.get("/profile/", function(req, res) {
-        
+    app.get("/profile", isAuthenticated, function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/profile.html"));
+      });
     // });
 
 }

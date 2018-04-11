@@ -1,0 +1,28 @@
+{
+  "name": "clt-free",
+  "version": "1.0.0",
+  "description": "CLT free is an app for freelancers and those seeking freelancers for work in Charlotte, NC. Instead of outsourcing your project to a different country or state, hire your neighbor instead.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamBurrows/CLT-free.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamBurrows/CLT-free/issues"
+  },
+  "homepage": "https://github.com/CamBurrows/CLT-free#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.6"
+  }
+}
