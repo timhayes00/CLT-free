@@ -15,6 +15,7 @@ $teal: #4f8292;
 //----------------
 $Stylish: 'Stylish', sans-serif;
 $IM-Fell: 'IM Fell English', serif;
+$EB-Garamond: 'EB Garamond', serif;
 $large-font: 10em;
 $medium-font: 8em;
 $small-font: 4.5em;
@@ -65,18 +66,22 @@ $body-font: 1.2em;
         font-size: 1.1rem;
     }
     .looking {
+        font-family: $EB-Garamond;
+        letter-spacing: 1px;
         border: none;
+        border-radius: 0;
         padding: 20px;
-        background: rgba(121, 170, 212, 0.78);
-        &:hover { background: #5a97cc; }
-        // box-shadow: inset 0px 0px 11px 3px #fff;
+        background: #5a97cc;
+        box-shadow: 0px 2px 0px 0px #fff;
+        &:hover { background: #406280; }
     }
     .navbar-brand {
         font-size: 1rem;
     }
     .post {
-        border-radius: 2px;
-        border: 2px solid white;
+        font-family: $EB-Garamond;
+        border-radius: 0;
+        border: 1px solid white;
         padding: 10px 20px;
         color: white;
         background: rgba(255, 255, 255, 0.4);
@@ -86,11 +91,12 @@ $body-font: 1.2em;
         }
     }
     .login {
-        color: #406280;
-        border-bottom: 2px solid #406280;
+        font-family: $EB-Garamond;
+        color: #213648;
+        border-bottom: 1px solid #213648;
         &:hover { 
-            color: #213648; 
-            border-color: #213648;
+            color: white; 
+            border-color: white;
         }
     }
     .buttons {
@@ -133,7 +139,8 @@ $body-font: 1.2em;
         display: block;
         .post {
             background: white;
-            color: #5a97cc; 
+            border-color: white;
+            color: #6a98bf; 
             &:hover { 
                 background: $carolina-blue;
                 border-color: $carolina-blue;
@@ -144,13 +151,17 @@ $body-font: 1.2em;
 }
 
 .heading {
-    background-color: $carolina-blue;
+    background-color: #709fc7;
     color: white;
-    padding: 10px 0;
-    font-family: $Stylish;
-    font-size: $xsmall-font;
-    text-shadow: 2px 2px 8px #5a5656;
+    padding: 8px 0 12px 0;
+    font-family: $EB-Garamond;
+    letter-spacing: 2px;
+    font-size: 2em;
+    text-shadow: 2px 2px 2px #3a3a3a;
     border-radius: 0;
+    box-shadow: inset 0px 11px 6px -10px #131313, 
+                inset 0px -1px 4px 0px #131313;
+
 }
 
 .content {
@@ -170,8 +181,8 @@ $body-font: 1.2em;
     padding: 20px;
     border-radius: 5px;
     label {
-        font-family: $Stylish;
-        font-size: 1.5em;
+        font-family: 'EB Garamond', serif;
+        font-size: 1.3em;
     }
     input::placeholder,
     textarea::placeholder {
@@ -213,7 +224,7 @@ $laptop: 1300px;
             padding: 10px 20px;
         }
         .buttons {
-            margin-top: 7rem;
+            margin-top: 5rem;
         }
         .navbar-brand {
             font-size: 1.25rem;
@@ -222,10 +233,10 @@ $laptop: 1300px;
 
     .form {
         .display-4 {
-            font-size: 5em;
+            font-size: 3em;
         }
         .free {
-            font-size: 7em;
+            font-size: 4em;
         }
     }
 
@@ -238,6 +249,11 @@ $laptop: 1300px;
             font-size: 6em;
         }
     }
+
+    .heading {
+        padding: 10px 0 15px 0;
+        font-size: $xsmall-font;
+    }
     
 }
 
@@ -247,7 +263,7 @@ $laptop: 1300px;
     .jumbotron {
         
         .buttons {
-            margin: 10rem;
+            margin: 7rem 3rem 0 3rem;
         }
     }
     
