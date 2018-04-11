@@ -16,9 +16,9 @@ $(document).ready(function() {
         //code for grabbing user id of logged in user
      
       // Wont submit the post if we are missing a body or a title
-      if (!freelancerName.val().trim() || !category.val().trim() || !portfolio.val().trim() || !linkedin.val().trim() || !rate.val().trim() || !image.val().trim()) {
-        return;
-      }
+      // if (!freelancerName.val().trim() || !category.val().trim() || !portfolio.val().trim() || !linkedin.val().trim() || !rate.val().trim() || !image.val().trim()) {
+      //   return;
+      // }
       // Constructing a newJobPost object to hand to the database
       var newFreelancerPost = {
         freelancer_name: freelancerName,

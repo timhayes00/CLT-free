@@ -11,9 +11,9 @@ $(document).ready(function() {
         //code for grabbing user id of logged in user
      
       // Wont submit the post if we are missing a body or a title
-      if (!jobPoster.val().trim() || !jobName.val().trim() || !jobDescription.val().trim() ) {
-        return;
-      }
+      // if (!jobPoster.val().trim() || !jobName.val().trim() || !jobDescription.val().trim() ) {
+      //   return;
+      // }
       // Constructing a newJobPost object to hand to the database
       var newJobPost = {
         creator: jobPoster,
