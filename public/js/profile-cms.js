@@ -6,10 +6,10 @@ $(document).ready(function() {
       event.preventDefault();
 
         var freelancerName = $("#name").val().trim();
+        var freelancerEmail = $("email").val().trim();
         var category = $("#job-category").val();
         var portfolio = $("#portfolio").val().trim();
         var linkedin = $("#linkedin").val().trim();
-        // var email = $("#email").val().trim();
         var rate = $("#rate").val().trim();
         var image = $("#profile-image").val().trim();
         var bio = $("#bio").val().trim();
@@ -23,12 +23,12 @@ $(document).ready(function() {
       var newFreelancerPost = {
         freelancer_name: freelancerName,
         skill_set: category,
+        email: freelancerEmail,
         img_link: image,
         bio: bio,
         portfolio: portfolio,
         linked_in: linkedin,
         rate_requested: rate,
-        // email: email
       };
   
       console.log(newFreelancerPost);

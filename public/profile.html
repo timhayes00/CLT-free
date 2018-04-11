@@ -97,12 +97,26 @@
 
     <h2 class="text-center heading">My Profile</h2>
 
-    <div class="container-fluid content">
+    <div class="container-fluid content row">
     
-    <!-- profile dashboard -->
-    <div class="row profile-dashboard">
+    <div class="col-md-6 profile-section">
+        <h2 class="text-center">My Freelancer Posts</h2>
+        
+        <!-- my freelancer posts -->
+        <div class="row profile-freelancer-posts">
 
 
+        </div>
+    </div>
+
+    <div class="col-md-6 profile-section">
+        <h2 class="text-center">My Job Posts</h2>
+
+        <!-- my job posts -->
+        <div class="profile-job-posts">
+
+
+        </div>
     </div>
 
     </div><!-- end .container -->
@@ -114,6 +128,60 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- work-cms.js (AJAX POST call) -->
 <script src="js/work-cms.js" type="text/javascript"></script>
+<!-- AJAX GET calls -->
+<script type="text/javascript">
+
+    var currentURL = window.location.origin;
+
+    // <--- My Freelancer Posts --->
+
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: currentURL + "/api/profile/freelancers", method: "GET" })
+    .then(function(freelancerPosts) {
+
+        // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/profile/freelancers");
+        console.log("------------------------------------");
+
+        // Here we then log the freelancerPosts to console, where it will show up as an object.
+        console.log(freelancerPosts);
+        console.log("------------------------------------");
+
+        // Loop through and display each of the freelancers
+        for (var i = 0; i < freelancerPosts.length; i++) {
+
+            // prepend each freelancerPosts to .freelancers-dashboard
+            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5></div></div>');
+
+        }
+    });
+
+    // <--- My Job Posts --->
+
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: currentURL + "/api/profile/jobs", method: "GET" })
+    .then(function(jobPosts) {
+
+        // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/profile/jobs");
+        console.log("------------------------------------");
+
+        // Here we then log the jobPosts to console, where it will show up as an object.
+        console.log(jobPosts);
+        console.log("------------------------------------");
+
+        // Loop through and display each of the customers
+        for (var i = 0; i < jobPosts.length; i++) {
+
+            // prepend each job to .jobs-dashboard
+            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5></div></div>');
+
+        }
+    });
+
+</script>
 
 </body>
 

@@ -4,7 +4,8 @@ $(document).ready(function() {
     // Adding an event listener for when the form is submitted
     $(cmsForm).on("submit", function handleFormSubmit(event) {
       event.preventDefault();
-        var jobPoster = $("#job-poster-name").val().trim()
+        var jobPoster = $("#job-poster-name").val().trim();
+        var jobEmail = $("#email").val().trim();
         var jobName = $("#job-name").val().trim();
         var jobCategory = $("#job-category").val();
         var jobDescription = $("#job-description").val().trim();
@@ -17,6 +18,7 @@ $(document).ready(function() {
       // Constructing a newJobPost object to hand to the database
       var newJobPost = {
         creator: jobPoster,
+        email: jobEmail,
         job_name: jobName,
         job_description: jobDescription,
         job_category: jobCategory,

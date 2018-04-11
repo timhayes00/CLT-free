@@ -32,6 +32,14 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/work-cms.html"));
     });
 
+    app.get("/login", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/login.html"));
+    });
+
+    app.get("/sign-up", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/create-account.html"));
+    });
+
     //route to display user dashboard, need to incorporate id
     app.get("/profile", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/profile.html"));
