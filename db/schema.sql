@@ -7,8 +7,8 @@ CREATE TABLE jobs (
   creator VARCHAR(255) NOT NULL,
   job_name VARCHAR(255) NOT NULL,
   job_description TEXT NOT NULL,
-  job_category VARCHAR(255) NOT NULL,
-  -- email VARCHAR(255) NOT NULL,
+  job_category TEXT NOT NULL,
+  email VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
   );
 
@@ -20,8 +20,8 @@ CREATE TABLE freelancers (
   bio TEXT NOT NULL,
   portfolio VARCHAR(255) NOT NULL,
   linked_in VARCHAR(255) NOT NULL,
-  -- email VARCHAR(255) NOT NULL,
   rate_requested INTEGER NOT NULL,
+  email VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
   );
 

@@ -49,7 +49,7 @@
   background: #406280;
 }
 .jumbotron .navbar-brand {
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 .jumbotron .post {
   font-family: "EB Garamond", serif;
@@ -99,12 +99,12 @@
   background: linear-gradient(0deg, #909090, #fdfdfd);
 }
 .dashboard .display-4 {
-  font-size: 2.5em;
+  font-size: 2em;
   display: inline;
   margin-right: 2px;
 }
 .dashboard .free {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 .dashboard nav {
   display: block;
@@ -133,10 +133,14 @@
 }
 
 .content .section {
+  font-family: "EB Garamond", serif;
   background: lightgray;
   padding: 10px;
   margin: 0 0 13px 0;
   border-radius: 5px;
+}
+.content .section .img-fluid {
+  height: 10rem;
 }
 
 .form {

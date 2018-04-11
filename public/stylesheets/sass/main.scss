@@ -76,7 +76,7 @@ $body-font: 1.2em;
         &:hover { background: #406280; }
     }
     .navbar-brand {
-        font-size: 1rem;
+        font-size: .7rem;
     }
     .post {
         font-family: $EB-Garamond;
@@ -128,12 +128,12 @@ $body-font: 1.2em;
     min-height: 10vh;
     background: linear-gradient(-0deg, #909090, #fdfdfd);
     .display-4 {
-        font-size: 2.5em;
+        font-size: 2em;
         display: inline;
         margin-right: 2px;
     }
     .free {
-        font-size: 3em;
+        font-size: 2.5em;
     }
     nav {
         display: block;
@@ -166,10 +166,14 @@ $body-font: 1.2em;
 
 .content {
     .section {
+        font-family: $EB-Garamond;
         background: lightgray;
         padding: 10px;
         margin: 0 0 13px 0;
         border-radius: 5px;
+        .img-fluid {
+            height: 10rem;
+        }
     }
 }
 
