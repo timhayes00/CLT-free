@@ -103,18 +103,20 @@
 
     <!-- filter by job category -->
     <div class="col-auto my-3 row">
-        <select class="custom-select col" id="inlineFormCustomSelect">
+        <select class="custom-select col" id="filter-select">
                 <option selected disabled>Filter by Job Category</option>
-                <option>Web Design</option>
-                <option>Legal Services</option>
-                <option>Handyman Services</option>
-                <option>Lawn Care</option>
-                <option>Graphic Design</option>
-                <option>Web Development</option>
-                <option>Copywriting</option>
-                <option>Photography</option>
-                <option>Video Production</option>
-                <option>Other</option>
+
+                <option value = "Web Design">Web Design</option>
+                <option value = "Legal Services">Legal Services</option>
+                <option value = "Handyman Services">Handyman Services</option>
+                <option value = "Lawn Care">Lawn Care</option>
+                <option value = "Graphic Design">Graphic Design</option>
+                <option value = "Web Development">Web Development</option>
+                <option value = "Copywriting">Copywriting</option>
+                <option value = "Photography">Photography</option>
+                <option value = "Video Production">Video Production</option>
+                <option value = "Other">Other</option>
+
         </select>
         <button class="btn btn-outline-secondary filter">Filter</button>
         <button class="btn btn-secondary ml-3 view-all">View All</button>
@@ -160,6 +162,80 @@
 
         }
     });
+
+    $.ajax({ url: currentURL + "/api/freelancers", method: "GET" })
+    .then(function(freelancersData) {
+
+        // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/freelancers");
+        console.log("------------------------------------");
+
+        // Here we then log the freelancersData to console, where it will show up as an object.
+        console.log(freelancersData);
+        console.log("------------------------------------");
+
+        // Loop through and display each of the freelancers
+        for (var i = 0; i < freelancersData.length; i++) {
+
+            // prepend each profile to .freelancers-dashboard
+            $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + '" class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
+
+        }
+    });
+
+    $(document).on("click", ".filter", function() {
+        
+        var filter = $("#filter-select").val();
+        
+        $.ajax({ 
+            url: currentURL + "/api/freelancers/" + filter, 
+            method: "GET" 
+        })
+        .then(function(freelancersData) {
+
+            $(".freelancers-dashboard").empty();
+            // Here we are logging the URL so we have access to it for troubleshooting
+
+            // Here we then log the freelancersData to console, where it will show up as an object.
+            console.log(freelancersData);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the freelancers
+            for (var i = 0; i < freelancersData.length; i++) {
+
+                // prepend each profile to .freelancers-dashboard
+                $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + '" class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
+            };
+        });
+    })
+
+    $(document).on("click", ".view-all", function() {
+        
+        $(".freelancers-dashboard").empty();
+        
+        $.ajax({ url: currentURL + "/api/freelancers", method: "GET" })
+        .then(function(freelancersData) {
+
+            // Here we are logging the URL so we have access to it for troubleshooting
+            console.log("------------------------------------");
+            console.log("URL: " + currentURL + "/api/freelancers");
+            console.log("------------------------------------");
+
+            // Here we then log the freelancersData to console, where it will show up as an object.
+            console.log(freelancersData);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the freelancers
+            for (var i = 0; i < freelancersData.length; i++) {
+
+                // prepend each profile to .freelancers-dashboard
+                $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + '" class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
+
+            }
+        });
+    });
+    
 
 </script>
 
