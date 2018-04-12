@@ -8,7 +8,8 @@ module.exports = function(app) {
 
 //GET route for jobs view page
 app.get("/api/jobs", function(req, res) {
-    db.Job.findAll(function(data) {
+    db.Job.findAll({})
+    .then(function(data){
     res.json(data);
     });
 });
@@ -24,7 +25,7 @@ app.post("/api/jobs", function(req, res) {
 });
 
       // DELETE route for deleting posts
-  // app.delete("/api/jobs/:id", function(req, res) {
+//   app.delete("/api/jobs/:id", function(req, res) {
   //   db.Post.destroy({
   //     where: {
   //       id: req.params.id

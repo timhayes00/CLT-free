@@ -19,7 +19,7 @@ module.exports = function(app) {
       app.post("/api/sign-up", function(req, res) {
         console.log(req.body);
         db.User.create({
-          email: req.body.email,
+          username: req.body.username,
           password: req.body.password
         }).then(function() {
           res.redirect(307, "/api/login");
@@ -35,5 +35,13 @@ module.exports = function(app) {
         req.logout();
         res.redirect("/");
       });
+
+      //route for sending current userid to client
+      app.get("/userid", function(req, res){
+        var userid = {UserId: req.user.id}
+        console.log ("server side: " + userid)
+        
+        res.json(userid)
+      })
 
 }

@@ -1,6 +1,7 @@
 var path = require("path");
 // Requiring our models
 var db = require("../models");
+var passport = require("../config/passport");
 
 
 //Routes for profile dashboard
@@ -38,7 +39,7 @@ module.exports = function(app) {
           // Sending back a password, even a hashed password, isn't a good idea
           var id = req.user.id
           console.log("id: " + id)
-          db.Jobs.findAll({
+          db.Job.findAll({
             where: {
                 id: id
             }

@@ -29,10 +29,10 @@ module.exports = function (sequelize, DataTypes) {
       //Currently trying to implement the data for email only in the user table
     ,
     email: {
-      type: Datatypes.STRING,
-      validate: {
-        isEmail: true
-      }
+      type: DataTypes.STRING,
+      // validate: {
+      //   isEmail: true
+      // }
     }
     
   });
