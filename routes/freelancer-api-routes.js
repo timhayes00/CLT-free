@@ -23,6 +23,17 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/freelancers/:category", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    db.Freelancer.findAll({
+      where: {
+        category: req.params.category
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+
   // POST route for creating new freelance post
   app.post("/api/freelancers", function(req, res) {
     db.Freelancer.create(
