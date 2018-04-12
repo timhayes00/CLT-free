@@ -14,6 +14,17 @@ app.get("/api/jobs", function(req, res) {
     });
 });
 
+app.get("/api/jobs/:category", function(req, res) {
+  db.Job.findAll({
+    where: {
+      category: req.params.category
+    }
+  })
+  .then(function(data){
+  res.json(data);
+  });
+});
+
 //POST route for jobs submission page
 app.post("/api/jobs", function(req, res) {
     db.Job.create(
