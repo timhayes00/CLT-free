@@ -94,6 +94,10 @@
   background: #406280;
 }
 
+.logOut {
+  display: none;
+}
+
 .dashboard {
   min-height: 10vh;
   background: linear-gradient(0deg, #909090, #fdfdfd);
