@@ -33,9 +33,15 @@ module.exports = function(sequelize, DataTypes) {
       User.hasMany(models.Job, {
           foreignKey: {
               allowNull: false
-          }
+          },
+      
+      }),
+      //if a user deletes their profile, all their job postings will also be deleted
+      User.hasMany(models.Job, {
+        onDelete: "cascade"
       })
     };
   
     return User;
   };
+
