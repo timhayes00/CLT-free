@@ -221,7 +221,7 @@
         for (var i = 0; i < freelancerPosts.length; i++) {
 
             // prepend each freelancerPosts to .freelancers-dashboard
-            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2 post-' + freelancerPosts[i].UserId + '"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete button-' + freelancerPosts[i].UserId + '">Delete</button></div></div>');
+            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
 
         }
     });
