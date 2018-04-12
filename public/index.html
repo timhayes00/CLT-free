@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>CLTfree</title>
+        <link rel="shortcut icon" href="img/cltfree.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=IM+Fell+English:400i|Stylish|EB+Garamond:600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="stylesheets/css/style.css">
@@ -15,8 +16,8 @@
     <header>
         <div class="jumbotron bg pt-3 m-0">
             <nav class="navbar navbar-expand-lg justify-content-end my-2 my-md-4">
-                <a id="login" class="navbar-brand text-underline login logIn" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-                <a id="logout" class="navbar-brand text-underline login logOut" href="#">Logout</a>
+                <a id="login" class="navbar-brand text-underline login logIn" href="" data-toggle="modal" data-target="#loginModal">Login</a>
+                <a id="logout" class="navbar-brand text-underline login logOut" href="">Logout</a>
                 <a class="navbar-brand login profile" href="/profile">My Profile</a>
                 <button class="navbar-brand post btn btn-outline-secondary ml-1 mr-0" data-toggle="modal" data-target="#postModal">POST</button>
             </nav>
@@ -25,8 +26,8 @@
             <br>
             <p class="lead description">For freelancers seeking work and work seeking freelancers in Charlotte, NC.</p>
             <p class="buttons row justify-content-center">
-                <a class="btn btn-primary btn-lg col looking mt-5 mx-5 font-weight-bold" href="freelancers.html" role="button">I'm looking for a freelancer</a>
-                <a class="btn btn-primary btn-lg col looking mt-5 mx-5 font-weight-bold" href="work.html" role="button">I'm looking for available jobs</a>
+                <a class="btn btn-primary btn-lg col looking mt-5 mx-5 font-weight-bold" href="/freelancers" role="button">I'm looking for a freelancer</a>
+                <a class="btn btn-primary btn-lg col looking mt-5 mx-5 font-weight-bold" href="/jobs" role="button">I'm looking for available jobs</a>
             </p>
         </div>
     </header>
@@ -73,13 +74,16 @@
         <form id="sign-up-form">
             <div class="form-group">
                 <label for="exampleInputEmail1">Create a Username:</label>
-                <input type="username" class="form-control" id="sign-up-email" aria-describedby="emailHelp" placeholder="">
+                <input type="username" class="form-control" id="sign-up-email" aria-describedby="emailHelp" placeholder="Username">
+                <small id="emailHelp" class="form-text">Must be at least 6 characters.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Create a Password:</label>
                 <input type="password" class="form-control" id="sign-up-password" placeholder="Password">
+                <small id="emailHelp" class="form-text">Must be at least 6 characters.</small>
             </div>
             <button type="submit" class="btn btn-primary submit">Create Account</button>
+            
         </form>
         </div>
         </div>
@@ -97,7 +101,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <a href="/freelancer-submit" class="btn btn-block post-modal">Post a Profile</a>
+            <a href="/freelancer-submit" class="btn btn-block post-modal">Post a Freelancer Profile</a>
             <a href="/job-submit" class="btn btn-block post-modal">Post a Job</a>
         </div>
         </div>
@@ -111,6 +115,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/sign-in.js" type="text/javascript"></script>
 <script src="js/sign-up.js" type="text/javascript"></script>
+<script src="js/login-check.js" type="text/javascript"></script>
+<script src="js/logout.js" type="text/javascript"></script>
 
 </body>
 

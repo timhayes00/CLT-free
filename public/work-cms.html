@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>CLTfree | Post</title>
+        <link rel="shortcut icon" href="img/cltfree.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=IM+Fell+English:400i|Stylish|EB+Garamond:600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="stylesheets/css/style.css">
@@ -16,24 +17,24 @@
         <div class="jumbotron p-2 m-0 row">
             <div class="col-lg-6 mx-auto">
             <div class="form mt-4">
-            <a href="index.html" class="logo"><h1 class="display-4">CLT<h1 class="free">free</h1></h1></a>
+            <a href="/" class="logo"><h1 class="display-4">CLT<h1 class="free">free</h1></h1></a>
             <div class="row mt-3">
 			<div class="col mx-auto">
 				<form id="cms">
 					<div class="form-group">
 
                         <label for="job-poster">Name/Company:</label>
-                        <input placeholder="" type="text" class="form-control" id="job-poster-name">
+                        <input placeholder="" type="text" class="form-control" id="job-poster-name" required>
                         
                         <br>
 
                         <label for="job-name">Job Title:</label>
-                        <input placeholder="" type="text" class="form-control" id="job-name">
+                        <input placeholder="" type="text" class="form-control" id="job-name" required>
 
                         <br>
 
                         <label for="job-category">Job Category:</label>
-                        <select class="form-control" id="job-category">
+                        <select class="form-control" id="job-category" required>
                             <option selected disabled>Select One</option>
                             <option value="Web Design">Web Design</option>
                             <option value="Legal Services">Legal Services</option>
@@ -50,12 +51,12 @@
                         <br>
 
 						<label for="email">Email:</label>
-                        <input placeholder="" type="text" class="form-control" id="email"> 
+                        <input placeholder="" type="email" class="form-control" id="email" required> 
 
                         <br>
 
                         <label for="job-description">Job Description:</label>
-						<textarea placeholder="" class="form-control" rows="5" id="job-description"></textarea>
+						<textarea placeholder="" class="form-control" rows="5" id="job-description" required></textarea>
 
                         <button type="submit" class="btn btn-success submit mt-3">Submit</button>
                     </div>

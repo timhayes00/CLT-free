@@ -4,7 +4,8 @@ $.ajax({
   }).then(function(data){
   
   if( data.loggedIn === true ){
-    $("#logout").css("hide=")
+    $("#logout").css("display","inline")
+    $("#login").css("display", "none")
   }
 
 })
