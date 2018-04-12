@@ -254,8 +254,8 @@
             $(".profile-job-posts").prepend('<div class="col-lg-6 my-2 jobpost-' + jobPosts[i].UserId + '"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete jobbutton-' + jobPosts[i].UserId + '">Delete</button></div></div>');
             
             // deletes job post from the DOM
-            $(".jobbutton-" + freelancerPosts[i].UserId).click(function() {
-                $(".jobpost-" + freelancerPosts[i].UserId).remove();
+            $(".jobbutton-" + jobPosts[i].UserId).click(function() {
+                $(".jobpost-" + jobPosts[i].UserId).remove();
             });
         }
     });
