@@ -146,6 +146,13 @@
 .content .section .img-fluid {
   height: 10rem;
 }
+.content .filter {
+  border-radius: 0;
+}
+.content .view-all {
+  border-radius: 3px;
+  background: #406280;
+}
 .content .profile-section h2 {
   padding: 5px;
   font-family: "Stylish", sans-serif;
