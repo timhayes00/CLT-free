@@ -41,7 +41,10 @@ $(document).ready(function() {
           $.ajax({
             method: "POST",
             url: "/api/freelancers",
-            data: newFreelancerPost
+            data: newFreelancerPost,
+            success: function(){
+              window.location.href = "/freelancers"
+            }
           })
           
         });

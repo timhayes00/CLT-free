@@ -5,12 +5,12 @@ module.exports = function(sequelize, DataTypes) {
       username: {
         type: DataTypes.TEXT,
         allowNull: false,
-        len: [1]
+        len: [6]
       },
       password: {
         type: DataTypes.TEXT,
         allowNull: false,
-        len: [1]
+        len: [6]
       }
     });
 

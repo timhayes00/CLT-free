@@ -17,7 +17,7 @@ app.get("/api/jobs", function(req, res) {
 app.get("/api/jobs/:category", function(req, res) {
   db.Job.findAll({
     where: {
-      category: req.params.category
+      job_category: req.params.category
     }
   })
   .then(function(data){
