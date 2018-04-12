@@ -245,13 +245,8 @@ $( document ).ready(function() {
         for (var i = 0; i < jobPosts.length; i++) {
 
             // prepend each job to .jobs-dashboard
-<<<<<<< HEAD
-            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
-            
-=======
             $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete delete-job" data-id="' + jobPosts[i].id + '">Delete</button></div></div>');
 
->>>>>>> a2ed40c700b28a5fdaa903f60eb76afba8ef37e4
         }
     });
 
