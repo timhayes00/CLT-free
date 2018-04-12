@@ -170,6 +170,59 @@
         }
     });
 
+    $(document).on("click", ".filter", function() {
+        
+        var filter = $("#filter-select").val();
+        
+        $.ajax({ 
+            url: currentURL + "/api/jobs/" + filter, 
+            method: "GET" 
+        })
+        .then(function(jobsData) {
+
+            $(".jobs-dashboard").empty();
+            // Here we are logging the URL so we have access to it for troubleshooting
+
+            // Here we then log the jobsData to console, where it will show up as an object.
+            console.log(jobsData);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the jobs
+            for (var i = 0; i < jobsData.length; i++) {
+
+                // prepend each profile to .jobs-dashboard
+                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
+            };
+        });
+    });
+
+    //click handler for view all button
+    $(document).on("click", ".view-all", function() {
+        
+        $(".jobs-dashboard").empty();
+        
+        $.ajax({ url: currentURL + "/api/jobs", method: "GET" })
+        .then(function(jobsData) {
+
+            // Here we are logging the URL so we have access to it for troubleshooting
+            console.log("------------------------------------");
+            console.log("URL: " + currentURL + "/api/jobs");
+            console.log("------------------------------------");
+
+            // Here we then log the jobsData to console, where it will show up as an object.
+            console.log(jobsData);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the customers
+            for (var i = 0; i < jobsData.length; i++) {
+
+                // prepend each job to .jobs-dashboard
+                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
+
+            };
+        });
+    })
+
 </script>
 
 </body>
