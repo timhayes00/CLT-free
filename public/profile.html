@@ -106,7 +106,7 @@
         <div class="row profile-freelancer-posts">
 
             <!-- example repeating elements -->
-            <!-- <div class="col-lg-6 my-2">
+            <div class="col-lg-6 my-2">
                 <div class="section">
                     <img src="http://krishnagroupindia.com/wp-content/uploads/2018/01/pexels-photo-428339.jpeg" alt="" class="img-fluid mx-auto d-block my-3">
                     <h5>Name: </h5>
@@ -149,7 +149,7 @@
                     <hr>
                     <button type="submit" class="btn btn-danger delete">Delete</button>
                 </div>
-            </div> -->
+            </div>
             <!-- end example repeating elements -->
 
         </div>
@@ -162,7 +162,7 @@
         <div class="row profile-job-posts">
 
             <!-- example repeating elements -->
-            <!-- <div class="col-lg-6 my-2">
+            <div class="col-lg-6 my-2">
                 <div class="section">
                 <h5>Job Title: </h5>
                 <h5>Job Category: </h5>
@@ -182,7 +182,7 @@
                 <hr>
                 <button type="submit" class="btn btn-danger delete">Delete</button>
                 </div>
-            </div> -->
+            </div>
             <!-- end example repeating elements -->
 
         </div>
@@ -221,7 +221,12 @@
         for (var i = 0; i < freelancerPosts.length; i++) {
 
             // prepend each freelancerPosts to .freelancers-dashboard
-            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
+            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2 freepost-' + freelancerPosts[i].UserId + '"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete freebutton-' + freelancerPosts[i].UserId + '">Delete</button></div></div>');
+
+            // deletes freelancer post from the DOM
+            $(".freebutton-" + freelancerPosts[i].UserId).click(function() {
+                $(".freepost-" + freelancerPosts[i].UserId).remove();
+            });
 
         }
     });
@@ -246,8 +251,12 @@
         for (var i = 0; i < jobPosts.length; i++) {
 
             // prepend each job to .jobs-dashboard
-            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger submit">Delete</button></div></div>');
-
+            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2 jobpost-' + jobPosts[i].UserId + '"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete jobbutton-' + jobPosts[i].UserId + '">Delete</button></div></div>');
+            
+            // deletes job post from the DOM
+            $(".jobbutton-" + freelancerPosts[i].UserId).click(function() {
+                $(".jobpost-" + freelancerPosts[i].UserId).remove();
+            });
         }
     });
 
