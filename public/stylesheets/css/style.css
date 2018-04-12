@@ -99,16 +99,16 @@
 }
 
 .dashboard {
-  min-height: 10vh;
+  min-height: 15vh;
   background: linear-gradient(0deg, #909090, #fdfdfd);
 }
 .dashboard .display-4 {
-  font-size: 2em;
+  font-size: 1em;
   display: inline;
   margin-right: 2px;
 }
 .dashboard .free {
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 .dashboard nav {
   display: block;
@@ -122,6 +122,11 @@
   background: #79aad4;
   border-color: #79aad4;
   color: white;
+}
+.dashboard nav .go-to {
+  border: none;
+  color: white;
+  box-shadow: inset 0px 0px 11px 1px #484646;
 }
 
 .heading {
@@ -152,6 +157,9 @@
 .content .view-all {
   border-radius: 3px;
   background: #406280;
+}
+.content .view-all:hover {
+  background: #2b4358;
 }
 .content .profile-section h2 {
   padding: 5px;
@@ -231,12 +239,15 @@
     font-size: 4em;
   }
 
+  .dashboard {
+    min-height: 10vh;
+  }
   .dashboard .display-4 {
-    font-size: 4.5em;
+    font-size: 4em;
     margin-right: 4px;
   }
   .dashboard .free {
-    font-size: 6em;
+    font-size: 5.5em;
   }
 
   .heading {
