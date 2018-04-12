@@ -9,29 +9,40 @@ $(document).ready(function() {
         var jobName = $("#job-name").val().trim();
         var jobCategory = $("#job-category").val();
         var jobDescription = $("#job-description").val().trim();
-        //code for grabbing user id of logged in user
+        var id;
+        var idNumber;
+        
+        $.ajax({
+          method: "GET",
+          url: "/userid"
+        }).then(function(data){
+          console.log("cms page: " + data);
+          id = data;
+          idNumber = id.UserId;
+          console.log("userid: " + idNumber)
+          console.log(typeof idNumber)
+
+          var newJobPost = {
+            creator: jobPoster,
+            email: jobEmail,
+            job_name: jobName,
+            job_description: jobDescription,
+            job_category: jobCategory,
+            UserId: idNumber
+          };
+
+          $.ajax({
+            method: "POST",
+            url: "/api/jobs",
+            data: newJobPost
+          })
+        });
      
       // Wont submit the post if we are missing a body or a title
       // if (!jobPoster.val().trim() || !jobName.val().trim() || !jobDescription.val().trim() ) {
       //   return;
       // }
-      // Constructing a newJobPost object to hand to the database
-      var newJobPost = {
-        creator: jobPoster,
-        email: jobEmail,
-        job_name: jobName,
-        job_description: jobDescription,
-        job_category: jobCategory,
-      };
-  
-      console.log(newJobPost);
-
-      //ajax post to send new job to database
-      $.ajax({
-        method: "POST",
-        url: "/api/jobs",
-        data: newJobPost
-      })
+      
   
     });
 
