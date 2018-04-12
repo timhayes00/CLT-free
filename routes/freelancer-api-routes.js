@@ -8,7 +8,7 @@ var path = require("path");
 // Requiring our models
 var db = require("../models");
 
-require("body-parser")
+require("body-parser");
 
 // Routes
 // =============================================================
@@ -34,15 +34,15 @@ module.exports = function(app) {
 });
 
   // DELETE route for deleting posts
-  // app.delete("/api/freelancers/:id", function(req, res) {
-  //   db.Post.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+  app.delete("/api/freelancers/:id", function(req, res) {
+    db.Freelancer.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
 
   // PUT route for updating posts
   // app.put("/api/freelancers", function(req, res) {

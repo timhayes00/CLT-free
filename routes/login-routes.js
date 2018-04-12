@@ -42,6 +42,18 @@ module.exports = function(app) {
         console.log ("server side: " + userid)
         
         res.json(userid)
+      });
+
+      //route for passing user auth check to client
+      app.get("/logincheck", function(req, res){
+        if (!req.user){
+          var loggedin = {loggedIn:false}
+        }
+        else {
+          var loggedin = {loggedIn:true}
+        }
+
+        res.json(loggedin)
       })
 
 }
