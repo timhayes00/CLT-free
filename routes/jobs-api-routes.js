@@ -24,16 +24,16 @@ app.post("/api/jobs", function(req, res) {
     });
 });
 
-      // DELETE route for deleting posts
-//   app.delete("/api/jobs/:id", function(req, res) {
-  //   db.Post.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+ //   DELETE route for deleting posts
+  app.delete("/api/jobs/:id", function(req, res) {
+    db.Job.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
 
   // PUT route for updating posts
 //   app.put("/api/jobs/:id", function(req, res) {

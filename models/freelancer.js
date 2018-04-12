@@ -46,14 +46,9 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    }
-      //Right now we are not implementing email inside the freelancer table
-    ,
+    },
     email: {
       type: DataTypes.STRING,
-      // validate: {
-      //   isEmail: true
-      // }
     }
     
   });
@@ -82,7 +77,6 @@ module.exports = function (sequelize, DataTypes) {
     // })
     
   }
-    //EXAMPLE: User.belongsTo(Company); // Will add companyId to user
   return Freelancer;
 };
 

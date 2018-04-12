@@ -23,12 +23,12 @@ module.exports = function(app) {
     });
 
     //route to display freelance profile submission page
-    app.get("/freelancer-submit", function(req, res) {
+    app.get("/freelancer-submit", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/profile-cms.html"));
     });
 
     //route to display job submission page
-    app.get("/job-submit", function(req, res) {
+    app.get("/job-submit", isAuthenticated, function(req, res) {
         res.sendFile(path.join(__dirname, "../public/work-cms.html"));
     });
 

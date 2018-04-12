@@ -23,7 +23,7 @@
     </header>
 
     <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
@@ -48,10 +48,10 @@
         </div>
         </div>
     </div>
-    </div>
+    </div> -->
 
     <!-- Create Account Modal -->
-    <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
@@ -75,7 +75,7 @@
         </div>
         </div>
     </div>
-    </div>
+    </div> -->
 
     <!-- Post Modal -->
     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -197,6 +197,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- AJAX GET calls -->
 <script type="text/javascript">
+$( document ).ready(function() {
 
     var currentURL = window.location.origin;
 
@@ -219,7 +220,7 @@
         for (var i = 0; i < freelancerPosts.length; i++) {
 
             // prepend each freelancerPosts to .freelancers-dashboard
-            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
+            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + '" class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" data-id="' + freelancerPosts[i].id + '" class="btn btn-danger delete">Delete</button></div></div>');
 
         }
     });
@@ -244,11 +245,46 @@
         for (var i = 0; i < jobPosts.length; i++) {
 
             // prepend each job to .jobs-dashboard
+<<<<<<< HEAD
             $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
             
+=======
+            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete delete-job" data-id="' + jobPosts[i].id + '">Delete</button></div></div>');
+
+>>>>>>> a2ed40c700b28a5fdaa903f60eb76afba8ef37e4
         }
     });
 
+    //AJAX DELETE function for deleting a FREELANCER post
+    $(document).on("click", ".delete" , function() {
+        
+        var profileId = $(this).attr("data-id");
+        console.log("registered delete click");
+
+        $.ajax({
+            url: '/api/freelancers/' + profileId,
+            type: 'DELETE',
+            success: function(result) {
+                location.reload();
+            }
+        });
+    })
+
+    //AJAX DELETE function for deleting a JOB post
+    $(document).on("click", ".delete-job", function() {
+        
+        var jobId = $(this).attr("data-id");
+        console.log("registered delete click");
+        
+        $.ajax({
+            url: '/api/jobs/' + jobId,
+            type: 'DELETE',
+            success: function(result) {
+                location.reload();
+            }
+        });
+    })
+})
 </script>
 
 </body>
