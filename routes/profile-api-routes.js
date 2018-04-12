@@ -21,7 +21,7 @@ module.exports = function(app) {
           console.log("id: " + id)
           db.Freelancer.findAll({
             where: {
-                id: id
+                UserId: id
             }
         }).then(function(result) {
                 res.json(result);
@@ -41,7 +41,7 @@ module.exports = function(app) {
           console.log("id: " + id)
           db.Job.findAll({
             where: {
-                id: id
+                UserId: id
             }
         }).then(function(result) {
                 res.json(result);
