@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>CLTfree | Jobs</title>
+        <title>CLTfree | My Profile</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=IM+Fell+English:400i|Stylish|EB+Garamond:600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="stylesheets/css/style.css">
@@ -97,24 +97,93 @@
 
     <h2 class="text-center heading">My Profile</h2>
 
-    <div class="container-fluid content row">
+    <div class="container-fluid content row m-0">
     
     <div class="col-md-6 profile-section">
-        <h2 class="text-center">My Freelancer Posts</h2>
+        <h2 class="text-center mt-2">My Freelancer Posts</h2>
         
         <!-- my freelancer posts -->
         <div class="row profile-freelancer-posts">
 
+            <!-- example repeating elements -->
+            <!-- <div class="col-lg-6 my-2">
+                <div class="section">
+                    <img src="http://krishnagroupindia.com/wp-content/uploads/2018/01/pexels-photo-428339.jpeg" alt="" class="img-fluid mx-auto d-block my-3">
+                    <h5>Name: </h5>
+                    <h5>Skills: </h5>
+                    <h5>Portfolio: </h5>
+                    <h5>Linkedin: </h5>
+                    <h5>Email: </h5>
+                    <h5>Requested Rate: </h5>
+                    <h5>Bio: </h5>
+                    <hr>
+                    <button type="submit" class="btn btn-danger delete">Delete</button>
+                </div>
+            </div>
+
+            <div class="col-lg-6 my-2">
+            <div class="section">
+                    <img src="https://media1.popsugar-assets.com/files/thumbor/f6mR3MTC66MfnZFc0qGrgcnZ_fg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/12/19/048/n/1922441/tmp_f17bIy_7aef35b1ab387138_k.jpg" alt="" class="img-fluid mx-auto d-block my-3">
+                    <h5>Name: </h5>
+                    <h5>Skills: </h5>
+                    <h5>Portfolio: </h5>
+                    <h5>Linkedin: </h5>
+                    <h5>Email: </h5>
+                    <h5>Requested Rate: </h5>
+                    <h5>Bio: </h5>
+                    <hr>
+                    <button type="submit" class="btn btn-danger delete">Delete</button>
+                </div>
+            </div>
+
+            <div class="col-lg-6 my-2">
+                <div class="section">
+                    <img src="http://www.sindhurealestate.co.in/wp-content/uploads/2017/09/person-detail.person_image.jpeg" alt="" class="img-fluid mx-auto d-block my-3">
+                    <h5>Name: </h5>
+                    <h5>Skills: </h5>
+                    <h5>Portfolio: </h5>
+                    <h5>Linkedin: </h5>
+                    <h5>Email: </h5>
+                    <h5>Requested Rate: </h5>
+                    <h5>Bio: </h5>
+                    <hr>
+                    <button type="submit" class="btn btn-danger delete">Delete</button>
+                </div>
+            </div> -->
+            <!-- end example repeating elements -->
 
         </div>
     </div>
 
     <div class="col-md-6 profile-section">
-        <h2 class="text-center">My Job Posts</h2>
+        <h2 class="text-center mt-2">My Job Posts</h2>
 
         <!-- my job posts -->
-        <div class="profile-job-posts">
+        <div class="row profile-job-posts">
 
+            <!-- example repeating elements -->
+            <!-- <div class="col-lg-6 my-2">
+                <div class="section">
+                <h5>Job Title: </h5>
+                <h5>Job Category: </h5>
+                <h5>Email: </h5>
+                <h5>Job Description: </h5>
+                <hr>
+                <button type="submit" class="btn btn-danger delete">Delete</button>
+                </div>
+            </div>
+
+            <div class="col-lg-6 my-2">
+                <div class="section">
+                <h5>Job Title: </h5>
+                <h5>Job Category: </h5>
+                <h5>Email: </h5>
+                <h5>Job Description: </h5>
+                <hr>
+                <button type="submit" class="btn btn-danger delete">Delete</button>
+                </div>
+            </div> -->
+            <!-- end example repeating elements -->
 
         </div>
     </div>
@@ -148,14 +217,15 @@
         console.log(freelancerPosts);
         console.log("------------------------------------");
 
-        // Loop through and display each of the freelancers
+        // Loop through and display each of the freelancer profiles
         for (var i = 0; i < freelancerPosts.length; i++) {
 
             // prepend each freelancerPosts to .freelancers-dashboard
-            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5></div></div>');
+            $(".profile-freelancer-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><img src="' + freelancerPosts[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancerPosts[i].freelancer_name + '</h5><h5>Skills: ' + freelancerPosts[i].skill_set + ' </h5><h5>Portfolio: ' + freelancerPosts[i].portfolio + ' </h5><h5>Linkedin: ' + freelancerPosts[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancerPosts[i].rate_requested + ' </h5><h5>Email: ' + freelancerPosts[i].email + '</h5><h5>Bio: ' + freelancerPosts[i].bio + '</h5><hr><button type="submit" class="btn btn-danger delete">Delete</button></div></div>');
 
         }
     });
+
 
     // <--- My Job Posts --->
 
@@ -176,7 +246,7 @@
         for (var i = 0; i < jobPosts.length; i++) {
 
             // prepend each job to .jobs-dashboard
-            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5></div></div>');
+            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5>Job Title: ' + jobPosts[i].job_name + '</h5><h5>Job Category: ' + jobPosts[i].job_category + ' </h5><h5>Email: ' + jobPosts[i].email + '</h5><h5>Job Description: ' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger submit">Delete</button></div></div>');
 
         }
     });
