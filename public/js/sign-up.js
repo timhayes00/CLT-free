@@ -5,13 +5,13 @@ $(document).ready(function() {
     $(signUpForm).on("submit", function handleFormSubmit(event) {
       event.preventDefault();
 
-        var email = $("#sign-up-email").val();
+        var username = $("#sign-up-email").val();
         var password = $("#sign-up-password").val();
         //code for grabbing user id of logged in user
      
       // Constructing a newJobPost object to hand to the database
       var newSignUp = {
-        email: email,
+        username: username,
         password: password
       };
   
