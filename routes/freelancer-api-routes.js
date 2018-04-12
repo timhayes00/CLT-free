@@ -27,7 +27,7 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     db.Freelancer.findAll({
       where: {
-        category: req.params.category
+        skill_set: req.params.category
       }
     }).then(function(result) {
       res.json(result);
