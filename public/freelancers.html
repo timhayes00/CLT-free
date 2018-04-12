@@ -119,7 +119,7 @@
 
         </select>
         <button class="btn btn-outline-secondary filter">Filter</button>
-        <button class="btn btn-secondary ml-3 view-all">View All</button>
+        <button class="btn btn-secondary ml-3 view-all">View All Freelancers</button>
     </div>
 
     <!-- freelancer dashboard -->
@@ -158,35 +158,16 @@
         for (var i = 0; i < freelancersData.length; i++) {
 
             // prepend each profile to .freelancers-dashboard
-            $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + ' class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
-
-        }
-    });
-
-    $.ajax({ url: currentURL + "/api/freelancers", method: "GET" })
-    .then(function(freelancersData) {
-
-        // Here we are logging the URL so we have access to it for troubleshooting
-        console.log("------------------------------------");
-        console.log("URL: " + currentURL + "/api/freelancers");
-        console.log("------------------------------------");
-
-        // Here we then log the freelancersData to console, where it will show up as an object.
-        console.log(freelancersData);
-        console.log("------------------------------------");
-
-        // Loop through and display each of the freelancers
-        for (var i = 0; i < freelancersData.length; i++) {
-
-            // prepend each profile to .freelancers-dashboard
             $(".freelancers-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><img src="' + freelancersData[i].img_link + '" class="img-fluid mx-auto d-block my-3"><h5>Name: ' + freelancersData[i].freelancer_name + '</h5><h5>Skills: ' + freelancersData[i].skill_set + ' </h5><h5>Portfolio: ' + freelancersData[i].portfolio + ' </h5><h5>Linkedin: ' + freelancersData[i].linked_in + ' </h5><h5>Requested Rate: ' + freelancersData[i].rate_requested + ' </h5><h5>Email: ' + freelancersData[i].email + '</h5><h5>Bio: ' + freelancersData[i].bio + '</h5></div></div>');
 
         }
     });
 
     $(document).on("click", ".filter", function() {
-        
+        event.preventDefault();
+
         var filter = $("#filter-select").val();
+        console.log("filter: " + filter)
         
         $.ajax({ 
             url: currentURL + "/api/freelancers/" + filter, 
@@ -211,7 +192,8 @@
     })
 
     $(document).on("click", ".view-all", function() {
-        
+        event.preventDefault();
+
         $(".freelancers-dashboard").empty();
         
         $.ajax({ url: currentURL + "/api/freelancers", method: "GET" })

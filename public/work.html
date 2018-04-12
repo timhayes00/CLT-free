@@ -103,21 +103,21 @@
 
     <!-- filter by job category -->
     <div class="col-auto my-3 row">
-        <select class="custom-select col" id="inlineFormCustomSelect">
+        <select class="custom-select col" id="filter-select">
                 <option selected disabled>Filter by Job Category</option>
-                <option>Web Design</option>
-                <option>Legal Services</option>
-                <option>Handyman Services</option>
-                <option>Lawn Care</option>
-                <option>Graphic Design</option>
-                <option>Web Development</option>
-                <option>Copywriting</option>
-                <option>Photography</option>
-                <option>Video Production</option>
-                <option>Other</option>
+                <option value = "Web Design">Web Design</option>
+                <option value = "Legal Services">Legal Services</option>
+                <option value = "Handyman Services">Handyman Services</option>
+                <option value = "Lawn Care">Lawn Care</option>
+                <option value = "Graphic Design">Graphic Design</option>
+                <option value = "Web Development">Web Development</option>
+                <option value = "Copywriting">Copywriting</option>
+                <option value = "Photography">Photography</option>
+                <option value = "Video Production">Video Production</option>
+                <option value = "Other">Other</option>
         </select>
         <button class="btn btn-outline-secondary filter">Filter</button>
-        <button class="btn btn-secondary ml-3 view-all">View All</button>
+        <button class="btn btn-secondary ml-3 view-all">View All Jobs</button>
     </div>
     
     <!-- jobs dashboard -->
@@ -173,8 +173,10 @@
     });
 
     $(document).on("click", ".filter", function() {
+        event.preventDefault();
         
         var filter = $("#filter-select").val();
+        console.log("filter: " + filter)
         
         $.ajax({ 
             url: currentURL + "/api/jobs/" + filter, 
@@ -200,6 +202,7 @@
 
     //click handler for view all button
     $(document).on("click", ".view-all", function() {
+        event.preventDefault();
         
         $(".jobs-dashboard").empty();
         

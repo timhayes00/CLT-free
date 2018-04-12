@@ -34,7 +34,11 @@ $(document).ready(function() {
           $.ajax({
             method: "POST",
             url: "/api/jobs",
-            data: newJobPost
+            data: newJobPost,
+            success: function(){
+                window.location.href = "/jobs"
+            }
+          
           })
         });
      
