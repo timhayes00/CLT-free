@@ -122,6 +122,10 @@ $body-font: 1.2em;
     }
 }
 
+.loggedout {
+    display: none;
+}
+
 // <--- dashboard pages --->
 
 .dashboard {
@@ -161,7 +165,6 @@ $body-font: 1.2em;
     border-radius: 0;
     box-shadow: inset 0px 11px 6px -10px #131313, 
                 inset 0px -1px 4px 0px #131313;
-
 }
 
 .content {
