@@ -126,7 +126,7 @@
     
     <!-- jobs dashboard -->
     <div class="row jobs-dashboard">
-
+            
     </div>
 
     </div><!-- end .container -->
@@ -162,7 +162,7 @@
         for (var i = 0; i < jobsData.length; i++) {
 
             // prepend each job to .jobs-dashboard
-            $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Poster: ' + jobsData[i].creator + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
+            $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5 class="title">Job Title:</h5><h5>' + jobsData[i].job_name + '</h5><br><br><h5 class="title">Job Poster:</h5><h5>' + jobsData[i].creator + '</h5><br><br><h5 class="title">Job Category:</h5><h5>' + jobsData[i].job_category + ' </h5><br><br><h5 class="title">Email:</h5><h5>' + jobsData[i].email + '</h5><br><br><h5 class="title">Job Description:</h5><h5>' + jobsData[i].job_description + '</h5></div></div>');
 
         }
     });
@@ -190,7 +190,7 @@
             for (var i = 0; i < jobsData.length; i++) {
 
                 // prepend each profile to .jobs-dashboard
-                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Poster: ' + jobsData[i].creator + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
+                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5 class="title">Job Title:</h5><h5>' + jobsData[i].job_name + '</h5><br><br><h5 class="title">Job Poster:</h5><h5>' + jobsData[i].creator + '</h5><br><br><h5 class="title">Job Category:</h5><h5>' + jobsData[i].job_category + ' </h5><br><br><h5 class="title">Email:</h5><h5>' + jobsData[i].email + '</h5><br><br><h5 class="title">Job Description:</h5><h5>' + jobsData[i].job_description + '</h5></div></div>');
             };
         });
     });
@@ -217,7 +217,7 @@
             for (var i = 0; i < jobsData.length; i++) {
 
                 // prepend each job to .jobs-dashboard
-                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5>Job Title: ' + jobsData[i].job_name + '</h5><h5>Job Poster: ' + jobsData[i].creator + '</h5><h5>Job Category: ' + jobsData[i].job_category + ' </h5><h5>Email: ' + jobsData[i].email + '</h5><h5>Job Description: ' + jobsData[i].job_description + '</h5></div></div>');
+                $(".jobs-dashboard").prepend('<div class="col-md-4 col-lg-3 my-2"><div class="section"><h5 class="title">Job Title:</h5><h5>' + jobsData[i].job_name + '</h5><br><br><h5 class="title">Job Poster:</h5><h5>' + jobsData[i].creator + '</h5><br><br><h5 class="title">Job Category:</h5><h5>' + jobsData[i].job_category + ' </h5><br><br><h5 class="title">Email:</h5><h5>' + jobsData[i].email + '</h5><br><br><h5 class="title">Job Description:</h5><h5>' + jobsData[i].job_description + '</h5></div></div>');
 
             };
         });
