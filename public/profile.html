@@ -123,7 +123,7 @@ $( document ).ready(function() {
         for (var i = 0; i < jobPosts.length; i++) {
 
             // prepend each job to .jobs-dashboard
-            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5 class="title">Job Title:</h5><h5>' + jobsData[i].job_name + '</h5><br><br><h5 class="title">Job Poster:</h5><h5>' + jobsData[i].creator + '</h5><br><br><h5 class="title">Job Category:</h5><h5>' + jobsData[i].job_category + ' </h5><br><br><h5 class="title">Email:</h5><h5>' + jobsData[i].email + '</h5><br><br><h5 class="title">Job Description:</h5><h5>' + jobsData[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete delete-job" data-id="' + jobPosts[i].id + '">Delete</button></div></div>');
+            $(".profile-job-posts").prepend('<div class="col-lg-6 my-2"><div class="section"><h5 class="title">Job Title:</h5><h5>' + jobPosts[i].job_name + '</h5><br><br><h5 class="title">Job Poster:</h5><h5>' + jobPosts[i].creator + '</h5><br><br><h5 class="title">Job Category:</h5><h5>' + jobPosts[i].job_category + ' </h5><br><br><h5 class="title">Email:</h5><h5>' + jobPosts[i].email + '</h5><br><br><h5 class="title">Job Description:</h5><h5>' + jobPosts[i].job_description + '</h5><hr><button type="submit" class="btn btn-danger delete delete-job" data-id="' + jobPosts[i].id + '">Delete</button></div></div>');
 
         }
     });
