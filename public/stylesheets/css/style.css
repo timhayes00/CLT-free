@@ -152,6 +152,18 @@
 .content .section .img-fluid {
   height: 10rem;
 }
+.content .section h5 {
+  display: inline;
+  font-size: 1.15rem;
+}
+.content .section .title {
+  background: white;
+  padding: 2px 5px;
+  border-radius: 1px 5px;
+  text-shadow: 1px 1px 5px #d2d2d2;
+  color: black;
+  margin-right: 6px;
+}
 .content .filter {
   border-radius: 0;
 }
