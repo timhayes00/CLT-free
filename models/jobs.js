@@ -1,6 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
-    // Giving the Author model a name of type STRING
     creator: {
       type: DataTypes.STRING,
       allowNull: false,
