@@ -1,5 +1,5 @@
 .bg {
-  background: linear-gradient(rgba(121, 170, 212, 0.7882352941), transparent 60%), linear-gradient(0deg, #ffffff, transparent 30%), #ffffff url(../../img/bg.gif) no-repeat;
+  background: linear-gradient(rgba(161, 178, 193, 0.7882352941), transparent 60%), linear-gradient(0deg, #ffffff, transparent 30%), #ffffff url(../../img/bg.gif) no-repeat;
   background-size: cover;
 }
 
